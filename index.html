@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Můj&nbsp;Makléř – Profesionální realitní služby</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand">
+        <img src="images/logo.png" alt="Logo Můj&nbsp;Makléř">
+        <span class="brand-name">mujmakler<span class="primary-text">.cz</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="active">Domů</a></li>
+          <li><a href="#properties">Nabídka</a></li>
+          <li><a href="#services">Služby</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+      <button class="cta-button">Bezplatné ocenění</button>
+      <button class="nav-toggle" aria-label="Otevřít menu">
+        <span class="material-icons-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Najděte svůj vysněný&nbsp;<span class="primary-text">domov</span> bez starostí</h1>
+      <p>Profesionální realitní služby s osobním přístupem. Pomáháme vám najít to pravé místo pro život či investici.</p>
+      <div class="search-bar">
+        <span class="material-icons-outlined search-icon">search</span>
+        <input type="text" placeholder="Lokalita, ulice nebo město…" aria-label="Vyhledávání lokality">
+        <button class="btn-search">Hledat</button>
+      </div>
+      <div class="hero-features">
+        <div class="feature-item"><span class="material-icons-outlined primary-text">verified</span><span>Ověřené nemovitosti</span></div>
+        <div class="feature-item"><span class="material-icons-outlined primary-text">support_agent</span><span>Osobní prohlídky</span></div>
+        <div class="feature-item"><span class="material-icons-outlined primary-text">gavel</span><span>Právní servis</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Section -->
+  <section class="featured-section" id="properties">
+    <div class="container">
+      <div class="section-header">
+        <h2>Vybrané nemovitosti</h2>
+        <p>Exkluzivní nabídka bytů a domů právě pro vás.</p>
+      </div>
+      <div class="property-grid">
+        <!-- Property Card 1 -->
+        <div class="property-card">
+          <div class="card-image" style="background-image:url('images/property1.png');">
+            <span class="label">NOVINKA</span>
+            <span class="price">12&nbsp;500&nbsp;000&nbsp;Kč</span>
+          </div>
+          <div class="card-body">
+            <h3>Luxusní vila s bazénem</h3>
+            <div class="location"><span class="material-icons-outlined primary-text">place</span> Praha&nbsp;5</div>
+            <div class="stats">
+              <div><span class="material-icons-outlined">king_bed</span> 5&nbsp;pokojů</div>
+              <div><span class="material-icons-outlined">square_foot</span> 280&nbsp;m²</div>
+            </div>
+          </div>
+        </div>
+        <!-- Property Card 2 -->
+        <div class="property-card">
+          <div class="card-image" style="background-image:url('images/property2.png');">
+            <span class="label">TOP</span>
+            <span class="price">7&nbsp;800&nbsp;000&nbsp;Kč</span>
+          </div>
+          <div class="card-body">
+            <h3>Moderní apartmán 3+kk</h3>
+            <div class="location"><span class="material-icons-outlined primary-text">place</span> Praha&nbsp;2</div>
+            <div class="stats">
+              <div><span class="material-icons-outlined">king_bed</span> 3&nbsp;pokoje</div>
+              <div><span class="material-icons-outlined">square_foot</span> 95&nbsp;m²</div>
+            </div>
+          </div>
+        </div>
+        <!-- Property Card 3 -->
+        <div class="property-card">
+          <div class="card-image" style="background-image:url('images/property3.png');">
+            <span class="label">EXKLUZIVNĚ</span>
+            <span class="price">9&nbsp;200&nbsp;000&nbsp;Kč</span>
+          </div>
+          <div class="card-body">
+            <h3>Stylový rodinný dům</h3>
+            <div class="location"><span class="material-icons-outlined primary-text">place</span> Praha&nbsp;6</div>
+            <div class="stats">
+              <div><span class="material-icons-outlined">king_bed</span> 4&nbsp;pokoje</div>
+              <div><span class="material-icons-outlined">square_foot</span> 150&nbsp;m²</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Naše služby</h2>
+        <p>Komplexní servis v prodeji, vyhledávání a správě investic.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon"><span class="material-icons-outlined">sell</span></div>
+          <h3>Profesionální prodej</h3>
+          <p>Maximalizujeme cenu vaší nemovitosti moderními marketingovými metodami a datovou analýzou.</p>
+          <ul>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Datová analýza trhu</li>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Marketing na míru</li>
+          </ul>
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon"><span class="material-icons-outlined">home_work</span></div>
+          <h3>Zastoupení kupujícího</h3>
+          <p>Najdeme vaši vysněnou nemovitost a provedeme vás celým procesem, včetně právního servisu.</p>
+          <ul>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Individuální vyhledávání</li>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Právní služby</li>
+          </ul>
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon"><span class="material-icons-outlined">key</span></div>
+          <h3>Správa investic</h3>
+          <p>Zajistíme bezstarostnou správu vaší investice, výběr nájemců i údržbu.</p>
+          <ul>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Výběr nájemců</li>
+            <li><span class="material-icons-outlined primary-text">check_circle</span> Údržba nemovitostí</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valuation CTA Section -->
+  <section class="valuation-section" id="valuation">
+    <div class="container valuation-inner">
+      <div class="valuation-text">
+        <h2>Chcete znát hodnotu vaší nemovitosti?</h2>
+        <p>Získejte profesionální odhad zdarma. Odpovíme vám do 24 hodin.</p>
+      </div>
+      <form class="valuation-form" onsubmit="event.preventDefault(); this.querySelector('.status').textContent='Děkujeme! Ozveme se vám co nejdříve.'; this.reset();">
+        <input type="text" name="address" placeholder="Adresa nemovitosti" required>
+        <input type="email" name="email" placeholder="Váš e‑mail" required>
+        <button type="submit">Odeslat</button>
+        <p class="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Logo Můj&nbsp;Makléř">
+          <span class="brand-name">mujmakler<span class="primary-text">.cz</span></span>
+        </div>
+        <p>Spojujeme lokální expertízu s inovativními technologiemi, abychom vám poskytli nadstandardní realitní služby.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Prozkoumat</h4>
+        <ul>
+          <li><a href="#properties">Nabídka</a></li>
+          <li><a href="#services">Služby</a></li>
+          <li><a href="#valuation">Ocenění</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><span class="material-icons-outlined primary-text">call</span> <span>+420&nbsp;123&nbsp;456&nbsp;789</span></li>
+          <li><span class="material-icons-outlined primary-text">mail</span> <span>info@mujmakler.cz</span></li>
+          <li><span class="material-icons-outlined primary-text">location_on</span> <span>Václavské náměstí&nbsp;1, Praha</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> mujmakler.cz – Všechna práva vyhrazena.</p>
+      <nav class="legal-nav">
+        <a href="#">Zásady ochrany osobních údajů</a>
+        <a href="#">Podmínky užití</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Script to insert current year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.main-nav ul');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    // Close menu on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
