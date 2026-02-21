@@ -6,6 +6,7 @@ const estimateResult = document.getElementById('estimate-result');
 const leadForm = document.getElementById('lead-form');
 const experienceTabs = document.querySelectorAll('.experience-tab');
 const experiencePanels = document.querySelectorAll('.experience-panel');
+const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
@@ -72,8 +73,15 @@ if (estimateForm && estimateResult) {
     const size = Number(formData.get('size'));
     const state = Number(formData.get('state'));
 
+    if (!Number.isFinite(size) || size < 20) {
+      estimateResult.textContent = 'Zadejte prosím plochu alespoň 20 m².';
+      return;
+    }
+
     const total = Math.round((baseByType[type] || 0) * size * state);
-    estimateResult.textContent = `Orientační tržní cena: ${total.toLocaleString('cs-CZ')} Kč`;
+    const lower = Math.round(total * 0.95);
+    const upper = Math.round(total * 1.05);
+    estimateResult.textContent = `Orientační tržní rozpětí: ${lower.toLocaleString('cs-CZ')} – ${upper.toLocaleString('cs-CZ')} Kč`;
   });
 }
 
@@ -81,6 +89,15 @@ if (leadForm) {
   const status = leadForm.querySelector('.form-status');
   leadForm.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    const phone = String(leadForm.phone?.value || '').replace(/\s+/g, '');
+    if (!/^\+?[0-9]{9,15}$/.test(phone)) {
+      if (status) {
+        status.textContent = 'Zkontrolujte prosím telefonní číslo (9–15 číslic).';
+      }
+      return;
+    }
+
     if (status) {
       status.textContent = 'Děkujeme, zpráva byla odeslána. Ozveme se vám nejpozději do 24 hodin.';
     }
@@ -179,3 +196,28 @@ faqItems.forEach((item) => {
     });
   });
 });
+
+
+if (navLinks.length) {
+  const sections = Array.from(navLinks)
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  const setActiveLink = () => {
+    const scrollY = window.scrollY + 120;
+    let activeId = '#home';
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= scrollY) {
+        activeId = `#${section.id}`;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === activeId);
+    });
+  };
+
+  setActiveLink();
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+}

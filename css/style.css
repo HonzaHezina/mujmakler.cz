@@ -35,7 +35,8 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -49,18 +50,26 @@ h1, h2, h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: 190px;
-  height: 58px;
+  width: 240px;
+  height: 72px;
   overflow: hidden;
 }
 .brand img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+  transition: opacity 200ms ease;
 }
+.brand:hover img { opacity: 0.94; }
 
 .main-nav ul { display: flex; gap: 1.3rem; font-size: 0.92rem; color: #555; }
 .main-nav a:hover { color: #111; }
+.main-nav a.is-active {
+  color: #111;
+  font-weight: 700;
+}
 
 .btn,
 .cta-button {
@@ -320,6 +329,17 @@ cite { display: block; margin-top: 0.7rem; color: var(--muted); font-style: norm
 .valuation-wrap p { color: var(--muted); }
 .valuation-form { padding: 0.95rem; }
 .form-status { min-height: 1.2rem; margin-top: 0.3rem; color: #2f6a44; font-weight: 600; }
+.consent-check {
+  margin: 0.25rem 0 0.35rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  color: #555;
+  font-size: 0.9rem;
+}
+.consent-check input {
+  margin-top: 0.2rem;
+}
 
 .reveal,
 .interactive-lift { transform: none !important; opacity: 1 !important; transition: none !important; }
@@ -358,7 +378,7 @@ cite { display: block; margin-top: 0.7rem; color: var(--muted); font-style: norm
   .main-nav ul.open { display: flex; }
   .nav-toggle { display: inline-flex; }
   .cta-button { display: none; }
-  .brand { width: 160px; height: 52px; }
+  .brand { width: 196px; height: 62px; }
   .hero-grid,
   .experience-wrap,
   .why-grid,
