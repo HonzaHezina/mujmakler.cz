@@ -41,7 +41,7 @@ h1, h2, h3 {
 }
 
 .nav-container {
-  min-height: 76px;
+  min-height: 118px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,8 +50,8 @@ h1, h2, h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: 240px;
-  height: 72px;
+  width: 420px;
+  height: 132px;
   overflow: hidden;
 }
 .brand img {
@@ -206,11 +206,14 @@ section { padding: 4rem 0; border-top: 1px solid #f1f1f1; }
 .why-us,
 .reviews,
 .faq,
-.process { background: #fff; }
+.process,
+.offers,
+.insights { background: #fff; }
 
 .cards-grid,
 .listings-grid,
-.review-grid {
+.review-grid,
+.offers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
   gap: 1rem;
@@ -234,6 +237,51 @@ blockquote,
 .service-card span { color: #9d7171; font-size: 1.55rem; }
 .service-card h3 { margin: 0.25rem 0 0.35rem; font-size: 1.6rem; }
 .service-card p { color: var(--muted); }
+
+
+.offer-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.offer-card h3 { font-size: 1.8rem; margin-bottom: 0.45rem; }
+.offer-card p { color: var(--muted); margin-bottom: 0.6rem; }
+.offer-card ul { list-style: disc; padding-left: 1.1rem; color: #444; margin-bottom: 0.8rem; }
+.offer-card li { margin-bottom: 0.35rem; }
+.offer-card.is-featured { border-color: #cfb2b2; background: #fcf8f8; }
+.offer-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7f5555;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+}
+.insight-cards {
+  display: grid;
+  gap: 0.9rem;
+}
+.insight-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.65rem;
+}
+.insight-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+.insight-card h3 { font-size: 1.45rem; }
 
 .experience-wrap,
 .why-grid,
@@ -378,7 +426,9 @@ cite { display: block; margin-top: 0.7rem; color: var(--muted); font-style: norm
   .main-nav ul.open { display: flex; }
   .nav-toggle { display: inline-flex; }
   .cta-button { display: none; }
-  .brand { width: 196px; height: 62px; }
+  .brand { width: 260px; height: 82px; }
+  .nav-container { min-height: 88px; }
+  .insights-grid { grid-template-columns: 1fr; }
   .hero-grid,
   .experience-wrap,
   .why-grid,

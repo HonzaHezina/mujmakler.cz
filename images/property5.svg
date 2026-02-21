@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#dfeadf"/>
+  <rect y="480" width="1200" height="220" fill="#adc99a"/>
+  <rect x="260" y="230" width="700" height="300" rx="18" fill="#f6f1e7"/>
+  <polygon points="220,270 610,90 1000,270" fill="#846550"/>
+  <rect x="560" y="360" width="120" height="170" fill="#9d7b62"/>
+  <rect x="350" y="320" width="140" height="120" fill="#bdd7ea"/>
+  <rect x="730" y="320" width="140" height="120" fill="#bdd7ea"/>
+  <text x="120" y="640" font-size="52" fill="#2f4b2f" font-family="Arial">Říčany • rodinný dům</text>
+</svg>

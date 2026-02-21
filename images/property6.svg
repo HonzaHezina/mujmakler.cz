@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#dbe2ef"/>
+  <rect x="140" y="120" width="920" height="460" rx="20" fill="#f8fbff"/>
+  <rect x="220" y="200" width="250" height="300" fill="#b8c6dd"/>
+  <rect x="510" y="200" width="250" height="300" fill="#9fb2d3"/>
+  <rect x="800" y="200" width="180" height="300" fill="#839dc7"/>
+  <circle cx="930" cy="170" r="56" fill="#f3cc66"/>
+  <text x="120" y="640" font-size="52" fill="#304667" font-family="Arial">Vysočany • investiční 1+kk</text>
+</svg>

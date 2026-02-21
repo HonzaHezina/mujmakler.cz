@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" rx="20" fill="#f8f4f1"/>
+  <polyline points="90,400 220,350 330,360 460,270 560,250 700,180" fill="none" stroke="#b05b5b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="90" y1="420" x2="710" y2="420" stroke="#cbb4b4" stroke-width="4"/>
+  <circle cx="220" cy="350" r="14" fill="#b05b5b"/>
+  <circle cx="460" cy="270" r="14" fill="#b05b5b"/>
+  <text x="90" y="95" font-size="42" fill="#553f3f" font-family="Arial">Vývoj cen bytů</text>
+</svg>
