@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="mujmakler.cz – moderní realitní služby: prodej, nákup, pronájem i odhad ceny do 24 hodin.">
+  <meta name="description" content="MujMakler.cz – prodej a pronájem nemovitostí v Praze a Středočeském kraji, odhad zdarma, tým makléřů a kompletní servis.">
   <meta name="theme-color" content="#c1121f">
-  <title>mujmakler.cz | Realitní služby nové generace</title>
+  <title>MujMakler.cz | Reality v Praze a Středočeském kraji</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,25 +15,24 @@
 <body>
   <header class="site-header" id="home">
     <div class="container nav-container">
-      <a href="#home" class="brand" aria-label="mujmakler.cz domů">
-        <img src="images/logo.png" alt="Logo mujmakler.cz">
+      <a href="#home" class="brand" aria-label="MujMakler.cz domů">
+        <img src="images/logo.png" alt="Logo MujMakler.cz">
       </a>
 
       <nav class="main-nav" aria-label="Hlavní navigace">
         <ul>
+          <li><a href="#home">Domů</a></li>
+          <li><a href="#properties">Nemovitosti</a></li>
+          <li><a href="#sell">Prodej nemovitosti</a></li>
           <li><a href="#services">Služby</a></li>
-          <li><a href="#offers">Balíčky</a></li>
-          <li><a href="#why-us">Proč já</a></li>
-          <li><a href="#process">Jak pracuji</a></li>
-          <li><a href="#listings">Nabídka</a></li>
-          <li><a href="#insights">Tržní přehled</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#brokers">Makléři</a></li>
           <li><a href="#reviews">Reference</a></li>
+          <li><a href="#career">Kariéra</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
 
-      <a class="cta-button" href="#valuation">Zjistit cenu bytu</a>
+      <a class="cta-button" href="#valuation">Ocenění zdarma</a>
       <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">
         <span class="material-icons-outlined">menu</span>
       </button>
@@ -42,60 +41,44 @@
 
   <main>
     <section class="hero">
-      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="eyebrow">Realitní makléř pro Prahu a okolí</p>
-          <h1>Prodej nemovitosti <span>rychleji</span>, bezpečněji a s výsledkem, který dává smysl.</h1>
-          <p class="hero-copy">Místo generického webu nabízím jasný a transparentní proces: data pro správnou cenu, prémiovou prezentaci a právní bezpečí od začátku až po předání klíčů.</p>
+          <p class="eyebrow">MujMakler.cz</p>
+          <h1>Prodáváme nemovitosti v Praze a Středočeském kraji <span>rychle, bezpečně a za maximum</span>.</h1>
+          <p class="hero-copy">Pomáháme majitelům prodat, kupujícím najít domov a ambiciózním lidem růst v realitách. Vše bez balastu: jasný proces, silný marketing a právní jistota.</p>
           <div class="hero-actions">
-            <a href="#valuation" class="btn btn-primary">Bezplatný odhad do 24h</a>
-            <a href="#services" class="btn btn-secondary">Jak vám pomůžu</a>
+            <a href="#sell" class="btn btn-primary">Chci prodat nemovitost</a>
+            <a href="#properties" class="btn btn-secondary">Hledám nemovitost</a>
           </div>
-
-          <div class="hero-chip-row" aria-label="Hodnoty spolupráce">
-            <span class="hero-chip"><span class="material-icons-outlined">bolt</span> Rychlá odezva</span>
-            <span class="hero-chip"><span class="material-icons-outlined">analytics</span> Data-first přístup</span>
-            <span class="hero-chip"><span class="material-icons-outlined">shield</span> Bezpečný proces</span>
-          </div>
-
-          <ul class="hero-points">
-            <li><span class="material-icons-outlined">task_alt</span> Strategie prodeje šitá na konkrétní lokalitu</li>
-            <li><span class="material-icons-outlined">task_alt</span> Právní servis + bezpečná úschova kupní ceny</li>
-            <li><span class="material-icons-outlined">task_alt</span> Home staging, foto, video i výkonnostní reklama</li>
-          </ul>
-
           <div class="trust-row" aria-label="Klíčové metriky">
-            <div><strong>120+</strong><span>Prodaných nemovitostí</span></div>
-            <div><strong>14 dní</strong><span>Průměrná doba rezervace</span></div>
-            <div><strong>98 %</strong><span>Úspěšnost transakcí</span></div>
+            <div><strong>220+</strong><span>Uzavřených obchodů</span></div>
+            <div><strong>Praha + SČ</strong><span>Lokální specializace</span></div>
+            <div><strong>48 h</strong><span>První plán prodeje</span></div>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Rychlá kalkulace">
-          <h2>Rychlá orientační cena</h2>
-          <p>Nejčastější dotaz klientů: „Jakou cenu má moje nemovitost právě teď?“</p>
-          <form id="quick-estimate-form" class="estimate-form">
-            <label for="type">Typ nemovitosti</label>
-            <select id="type" name="type" required>
-              <option value="byt">Byt</option>
-              <option value="dum">Dům</option>
-              <option value="pozemek">Pozemek</option>
+        <aside class="hero-panel" aria-label="Vyhledávač nemovitostí">
+          <h2>Vyhledávač nemovitostí</h2>
+          <p>Najděte rychle to, co hledáte, podle lokality a dispozice.</p>
+          <form class="estimate-form">
+            <label for="search-type">Typ nabídky</label>
+            <select id="search-type" name="search-type">
+              <option>Prodej</option>
+              <option>Pronájem</option>
+              <option>Prodáno / Pronajato</option>
             </select>
 
-            <label for="size">Plocha (m²)</label>
-            <input id="size" name="size" type="number" min="20" max="2000" value="80" required>
+            <label for="search-locality">Lokalita</label>
+            <input id="search-locality" name="search-locality" type="text" placeholder="např. Praha 4, Příbram">
 
-            <label for="state">Stav nemovitosti</label>
-            <select id="state" name="state" required>
-              <option value="1">Po rekonstrukci</option>
-              <option value="0.9">Dobrý stav</option>
-              <option value="0.8">Před rekonstrukcí</option>
+            <label for="search-disposition">Dispozice</label>
+            <select id="search-disposition" name="search-disposition">
+              <option>1+kk</option>
+              <option>2+kk</option>
+              <option>3+kk</option>
+              <option>4+kk a více</option>
             </select>
-
-            <button type="submit" class="btn btn-primary full">Spočítat orientační cenu</button>
-            <p id="estimate-result" class="estimate-result" aria-live="polite"></p>
+            <button type="button" class="btn btn-primary full">Vyhledat nemovitost</button>
           </form>
         </aside>
       </div>
@@ -104,263 +87,162 @@
     <section class="services" id="services">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Co klienti opravdu chtějí</p>
-          <h2>Služby, které dnes rozhodují o úspěchu prodeje</h2>
+          <p class="eyebrow">Proč klienti volí MujMakler.cz</p>
+          <h2>4 hlavní výhody spolupráce</h2>
         </div>
         <div class="cards-grid">
           <article class="service-card">
-            <span class="material-icons-outlined">query_stats</span>
-            <h3>Přesné nacenění a data</h3>
-            <p>Srovnání realizovaných prodejů, poptávky v lokalitě i doporučení správného načasování.</p>
+            <span class="material-icons-outlined">gavel</span>
+            <h3>Právní servis</h3>
+            <p>Smlouvy, úschova, katastr i AML proces pod kontrolou od začátku do konce.</p>
           </article>
           <article class="service-card">
             <span class="material-icons-outlined">campaign</span>
-            <h3>Marketing, který je vidět</h3>
-            <p>Profesionální fotografie, video, sociální sítě, prémiové realitní portály a cílené kampaně.</p>
+            <h3>Výkonný marketing</h3>
+            <p>Profesionální foto, video, 3D prohlídka, sociální sítě i placená propagace.</p>
           </article>
           <article class="service-card">
-            <span class="material-icons-outlined">gavel</span>
-            <h3>Právní jistota bez rizika</h3>
-            <p>Rezervační i kupní dokumentace, advokátní úschova a kontrola každého kroku transakce.</p>
+            <span class="material-icons-outlined">location_on</span>
+            <h3>Lokální znalost</h3>
+            <p>Praha a Středočeský kraj: přesně víme, jak nastavit cenu i strategii podle lokality.</p>
           </article>
           <article class="service-card">
-            <span class="material-icons-outlined">chat</span>
-            <h3>Transparentní reporting</h3>
-            <p>Pravidelná data o zájmu, zpětná vazba z prohlídek a jasná doporučení pro další postup.</p>
-          </article>
-          <article class="service-card">
-            <span class="material-icons-outlined">video_camera_front</span>
-            <h3>Virtuální prohlídky 3D</h3>
-            <p>Interaktivní prohlídka a video-reel pro sociální sítě zvyšují počet kvalifikovaných zájemců.</p>
-          </article>
-          <article class="service-card">
-            <span class="material-icons-outlined">real_estate_agent</span>
-            <h3>Hypotéka a financování</h3>
-            <p>Napojení na hypoteční specialisty, prověření bonity kupujících a rychlejší schvalování.</p>
-          </article>
-          <article class="service-card">
-            <span class="material-icons-outlined">key</span>
-            <h3>Péče po předání</h3>
-            <p>Přepisy energií, předávací protokol, doporučení řemeslníků i pomoc s pronájmem nebo správou.</p>
+            <span class="material-icons-outlined">smart_toy</span>
+            <h3>Moderní technologie</h3>
+            <p>CRM, online reporty, digitální podpis i automatizace komunikace se zájemci.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="offers" id="offers">
+    <section class="listings" id="properties">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Vyberte si úroveň podpory</p>
-          <h2>Balíčky služeb podle toho, co právě potřebujete</h2>
+          <p class="eyebrow">Nemovitosti</p>
+          <h2>Prodej, pronájem i úspěšně uzavřené případy</h2>
         </div>
-        <div class="offers-grid">
-          <article class="offer-card">
-            <h3>Start prodej</h3>
-            <p>Pro majitele, kteří chtějí přesnou cenu a profesionální start kampaně.</p>
-            <ul>
-              <li>Analýza ceny a konkurence</li>
-              <li>Fotografie + půdorys + text inzerátu</li>
-              <li>Nastavení inzerce na hlavních portálech</li>
-            </ul>
-            <a href="#valuation" class="btn btn-secondary full">Chci nezávaznou nabídku</a>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Prodej</h3>
+            <p>Aktivní nabídky bytů, domů, pozemků a komerčních prostor.</p>
           </article>
-          <article class="offer-card is-featured">
-            <p class="offer-tag">Nejžádanější</p>
-            <h3>Kompletní prodej Premium</h3>
-            <p>Plná služba od strategie až po podpis, vhodná pro většinu prodejů v Praze.</p>
-            <ul>
-              <li>Home staging, video a 3D virtuální prohlídka</li>
-              <li>Výkonnostní reklama a řízené prohlídky</li>
-              <li>Právní servis, úschova i katastr</li>
-            </ul>
-            <a href="#valuation" class="btn btn-primary full">Domluvit konzultaci</a>
+          <article class="service-card">
+            <h3>Pronájem</h3>
+            <p>Prověřené nájemní nabídky se servisem pro majitele i nájemce.</p>
           </article>
-          <article class="offer-card">
-            <h3>Investor & pronájem</h3>
-            <p>Balíček pro klienty, kteří chtějí nakupovat výnosově a mít minimum starostí.</p>
-            <ul>
-              <li>Výběr lokality a cash-flow model</li>
-              <li>Vyjednání koupě a nastavení pronájmu</li>
-              <li>Správa nájemníka a pravidelný reporting</li>
-            </ul>
-            <a href="#valuation" class="btn btn-secondary full">Zjistit více</a>
+          <article class="service-card">
+            <h3>Prodáno / Pronajato</h3>
+            <p>Case studies uzavřených obchodů, které budují důvěru.</p>
+          </article>
+        </div>
+
+        <div class="listings-grid" style="margin-top: 1rem;">
+          <article class="listing-card">
+            <img src="images/property1.png" alt="Byt 3+kk Praha 4">
+            <div>
+              <h3>Byt 3+kk, Praha 4</h3>
+              <p>Fotogalerie · Video · 3D prohlídka · Půdorys · Mapa · PDF</p>
+              <strong>Makléř: Jana Novotná | Formulář „Mám zájem“</strong>
+            </div>
+          </article>
+          <article class="listing-card">
+            <img src="images/property5.svg" alt="Rodinný dům Příbram">
+            <div>
+              <h3>Rodinný dům, Příbram</h3>
+              <p>Kompletní technické informace + právní dokumentace ke stažení</p>
+              <strong>Makléř: Petr Král | Formulář „Mám zájem“</strong>
+            </div>
+          </article>
+          <article class="listing-card">
+            <img src="images/property6.svg" alt="Byt 1+kk Dobříš">
+            <div>
+              <h3>Byt 1+kk, Dobříš</h3>
+              <p>Ukázka detailu inzerátu, který vede k vyšší důvěře i konverzi</p>
+              <strong>Makléř: Lucie Šťastná | Formulář „Mám zájem“</strong>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="experience" id="experience">
+    <section class="process" id="sell">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Přívětivější spolupráce</p>
-          <h2>Interaktivní plán podle vaší situace</h2>
-        </div>
-
-        <div class="experience-wrap">
-          <div class="experience-tabs" role="tablist" aria-label="Scénáře spolupráce">
-            <button class="experience-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="exp-seller" id="tab-seller" data-tab="seller">Prodávám</button>
-            <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="exp-buyer" id="tab-buyer" data-tab="buyer">Kupují</button>
-            <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="exp-investor" id="tab-investor" data-tab="investor">Investuji</button>
-          </div>
-
-          <div class="experience-panels">
-            <article class="experience-panel is-active" id="exp-seller" role="tabpanel" aria-labelledby="tab-seller" data-panel="seller">
-              <h3>Chci prodat bez chaosu a zbytečných kompromisů</h3>
-              <p>Začneme strategií ceny a vizuální prezentací. Poté dostanete jasný plán kampaně i reporting průběhu po dnech, ne po týdnech.</p>
-              <ul>
-                <li>Start kampaně do 5 pracovních dní</li>
-                <li>Týdenní přehled zájmu a doporučení</li>
-                <li>Vyjednání podmínek včetně právního servisu</li>
-              </ul>
-            </article>
-
-            <article class="experience-panel" id="exp-buyer" role="tabpanel" aria-labelledby="tab-buyer" hidden data-panel="buyer">
-              <h3>Hledám nemovitost a nechci se spálit</h3>
-              <p>Pomohu vám od první filtrace nabídek po právní prověrku dokumentů, abyste se rozhodovali rychle a s jistotou.</p>
-              <ul>
-                <li>Rychlá analýza ceny vybrané nemovitosti</li>
-                <li>Kontrola technických i právních rizik</li>
-                <li>Podpora při vyjednání kupní ceny</li>
-              </ul>
-            </article>
-
-            <article class="experience-panel" id="exp-investor" role="tabpanel" aria-labelledby="tab-investor" hidden data-panel="investor">
-              <h3>Chci investovat s důrazem na výnos a likviditu</h3>
-              <p>Vybereme lokality i typy nemovitostí podle cíle investice. Dostanete realistický model výnosu a plán následného pronájmu/prodeje.</p>
-              <ul>
-                <li>Scoring lokalit podle dat a potenciálu</li>
-                <li>Model cash-flow a scénáře rizik</li>
-                <li>Strategie exitu už při nákupu</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="process" id="process">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Jednoduchý průběh spolupráce</p>
-          <h2>4 kroky od prvního kontaktu po podpis</h2>
+          <p class="eyebrow">Jak pracujeme</p>
+          <h2>Jasný proces v 7 krocích</h2>
         </div>
         <ol class="timeline">
-          <li><strong>Analýza a strategie</strong><span>Schůzka, data z trhu a nastavení realistické cílové ceny.</span></li>
-          <li><strong>Příprava nemovitosti</strong><span>Home staging, foto/video, půdorys a text, který pomáhá prodávat.</span></li>
-          <li><strong>Prodej a vyjednání</strong><span>Prohlídky, filtrace zájemců a vyjednání nejlepších podmínek.</span></li>
-          <li><strong>Právní dokončení</strong><span>Smlouvy, úschova, katastr a bezproblémové předání.</span></li>
+          <li><strong>Setkání</strong><span>Poznáme vaši situaci a cíl prodeje.</span></li>
+          <li><strong>Analýza trhu</strong><span>Stanovíme realistickou a výkonnou cenovou strategii.</span></li>
+          <li><strong>Příprava nemovitosti</strong><span>Home staging, foto, video, 3D a půdorys.</span></li>
+          <li><strong>Marketing</strong><span>Inzerce, sociální sítě, interní databáze, remarketing.</span></li>
+          <li><strong>Výběr kupce</strong><span>Filtrace zájemců a vyjednání nejlepších podmínek.</span></li>
+          <li><strong>Právní servis</strong><span>Smlouvy, úschova, katastr, AML a bezpečný převod.</span></li>
+          <li><strong>Předání</strong><span>Předávací protokol, energie, hladké dokončení obchodu.</span></li>
         </ol>
       </div>
     </section>
 
-    <section class="why-us" id="why-us">
-      <div class="container why-grid">
-        <div>
-          <div class="section-head">
-            <p class="eyebrow">Důvody, proč spolupracovat se mnou</p>
-            <h2>Profesionální servis, který je postavený na výsledku</h2>
-          </div>
-          <p class="why-copy">Každou zakázku beru jako projekt s jasným cílem: prodat bezpečně, bez zbytečných průtahů a za cenu, která odpovídá potenciálu nemovitosti. Proto kombinuji data, marketing i právní jistotu do jednoho funkčního systému.</p>
-          <ul class="why-list">
-            <li><span class="material-icons-outlined">verified</span> Certifikovaný realitní profesionál s kontinuálním vzděláváním</li>
-            <li><span class="material-icons-outlined">insights</span> Cenotvorba podložená daty z realizovaných transakcí</li>
-            <li><span class="material-icons-outlined">groups</span> Síť advokátů, hypotečních specialistů a fotografů</li>
-          </ul>
-        </div>
-        <aside class="highlight-panel" aria-label="Klíčové výhody spolupráce">
-          <h3>Co získáte navíc</h3>
-          <ul>
-            <li><strong>Strategie na míru:</strong> Každá nemovitost má vlastní plán a harmonogram.</li>
-            <li><strong>Prémiová prezentace:</strong> Profesionální výstupy pro inzerci i sociální sítě.</li>
-            <li><strong>Jasná komunikace:</strong> Pravidelné reporty a doporučení bez „omáčky“.</li>
-            <li><strong>Bezpečný převod:</strong> Kompletní smluvní dokumentace a úschova kupní ceny.</li>
-          </ul>
-          <a href="#valuation" class="btn btn-primary full">Domluvit nezávaznou konzultaci</a>
-        </aside>
-      </div>
-    </section>
-
-    <section class="listings" id="listings">
+    <section class="experience" id="brokers">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Aktuální nabídka</p>
-          <h2>Vybrané nemovitosti</h2>
+          <p class="eyebrow">Makléři</p>
+          <h2>Poznejte náš tým</h2>
         </div>
-        <div class="listings-grid">
-          <article class="listing-card">
-            <img src="images/property1.png" alt="Luxusní vila s bazénem v Praze 5">
-            <div>
-              <h3>Luxusní vila s bazénem</h3>
-              <p>Praha 5 · 280 m² · 5 pokojů</p>
-              <strong>12 500 000 Kč</strong>
-            </div>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Jana Novotná</h3>
+            <p><strong>Oblast:</strong> Praha 4, Praha 10<br><strong>Specializace:</strong> byty pro rodiny<br><strong>Prodané nemovitosti:</strong> 74<br><strong>Kontakt:</strong> +420 777 111 222</p>
+            <p>„Domluvit schůzku“</p>
           </article>
-          <article class="listing-card">
-            <img src="images/property2.png" alt="Moderní apartmán 3+kk v Praze 2">
-            <div>
-              <h3>Moderní apartmán 3+kk</h3>
-              <p>Praha 2 · 95 m² · 3 pokoje</p>
-              <strong>7 800 000 Kč</strong>
-            </div>
+          <article class="service-card">
+            <h3>Petr Král</h3>
+            <p><strong>Oblast:</strong> Příbram, Dobříš<br><strong>Specializace:</strong> rodinné domy<br><strong>Prodané nemovitosti:</strong> 63<br><strong>Kontakt:</strong> +420 777 333 444</p>
+            <p>„Domluvit schůzku“</p>
           </article>
-          <article class="listing-card">
-            <img src="images/property3.png" alt="Stylový rodinný dům v Praze 6">
-            <div>
-              <h3>Stylový rodinný dům</h3>
-              <p>Praha 6 · 150 m² · 4 pokoje</p>
-              <strong>9 200 000 Kč</strong>
-            </div>
-          </article>
-          <article class="listing-card">
-            <img src="images/property4.svg" alt="Designový loft 2+kk v Karlíně">
-            <div>
-              <h3>Designový loft 2+kk</h3>
-              <p>Praha 8 – Karlín · 72 m² · terasa</p>
-              <strong>8 490 000 Kč</strong>
-            </div>
-          </article>
-          <article class="listing-card">
-            <img src="images/property5.svg" alt="Rodinný dům se zahradou v Říčanech">
-            <div>
-              <h3>Rodinný dům se zahradou</h3>
-              <p>Říčany · 198 m² · pozemek 640 m²</p>
-              <strong>11 900 000 Kč</strong>
-            </div>
-          </article>
-          <article class="listing-card">
-            <img src="images/property6.svg" alt="Investiční byt 1+kk u metra Vysočanská">
-            <div>
-              <h3>Investiční byt 1+kk</h3>
-              <p>Praha 9 · 38 m² · u metra</p>
-              <strong>5 260 000 Kč</strong>
-            </div>
+          <article class="service-card">
+            <h3>Lucie Šťastná</h3>
+            <p><strong>Oblast:</strong> Praha 8, Praha 9<br><strong>Specializace:</strong> investiční byty<br><strong>Prodané nemovitosti:</strong> 58<br><strong>Kontakt:</strong> +420 777 555 666</p>
+            <p>„Domluvit schůzku“</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="insights" id="insights">
-      <div class="container insights-grid">
-        <div>
-          <div class="section-head">
-            <p class="eyebrow">Co se děje na trhu</p>
-            <h2>Průběžný tržní přehled pro lepší rozhodnutí</h2>
-          </div>
-          <p class="why-copy">Klienti dnes očekávají průběžné informace, ne jednorázový odhad. Proto dostáváte měsíční mini-report s cenovými trendy v lokalitě, časem prodeje a doporučením dalšího kroku.</p>
-          <ul class="why-list">
-            <li><span class="material-icons-outlined">trending_up</span> Vývoj nabídkových i realizovaných cen podle dispozic.</li>
-            <li><span class="material-icons-outlined">schedule</span> Průměrná doba rezervace a ideální načasování uvedení na trh.</li>
-            <li><span class="material-icons-outlined">location_on</span> Heatmapa zájmu kupujících podle ulic a občanské vybavenosti.</li>
-          </ul>
+    <section class="offers">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Služby</p>
+          <h2>Jednoduše rozdělené pro prodávající i kupující</h2>
         </div>
-        <div class="insight-cards" aria-label="Vizuální přehled služeb">
-          <article class="insight-card">
-            <img src="images/insight1.svg" alt="Graf vývoje cen bytů v Praze">
-            <h3>Cenový trend 12 měsíců</h3>
+        <div class="offers-grid">
+          <article class="offer-card">
+            <h3>Pro prodávající</h3>
+            <ul>
+              <li>Ocenění zdarma</li>
+              <li>Marketing nemovitosti</li>
+              <li>Právní servis</li>
+              <li>Vyjednávání</li>
+              <li>Kompletní servis až po předání</li>
+            </ul>
           </article>
-          <article class="insight-card">
-            <img src="images/insight2.svg" alt="Mapa lokalit s vysokou poptávkou">
-            <h3>Poptávka podle lokalit</h3>
+          <article class="offer-card">
+            <h3>Pro kupující</h3>
+            <ul>
+              <li>Vyhledání vhodné nemovitosti</li>
+              <li>Prověření právního stavu</li>
+              <li>Hypoteční poradenství</li>
+              <li>Přepis energií a služeb</li>
+            </ul>
+          </article>
+          <article class="offer-card">
+            <h3>Důvěra a transparentnost</h3>
+            <ul>
+              <li>IČO: 12345678</li>
+              <li>Zápis v OR: C 123456, Městský soud v Praze</li>
+              <li>Pojištění odpovědnosti: ano</li>
+              <li>AML informace, GDPR, obchodní podmínky</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -369,41 +251,18 @@
     <section class="reviews" id="reviews">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Reference klientů</p>
-          <h2>Důvěra je v realitách zásadní</h2>
+          <p class="eyebrow">Reference</p>
+          <h2>Autentické příběhy klientů</h2>
         </div>
         <div class="review-grid">
           <blockquote>
-            „Byt jsme prodali o 9 % dráž, než byl původní odhad. Vše proběhlo bez stresu a s perfektní organizací.“
-            <cite>— Martina K., Praha 8</cite>
+            „Prodávali jsme byt v Praze 4. Díky přesné strategii a vyjednání jsme dosáhli vyšší ceny, než jsme čekali.“
+            <cite>— Petra M. | Praha 4 | Byt 3+kk | ⭐⭐⭐⭐⭐</cite>
           </blockquote>
           <blockquote>
-            „Nejvíc oceňuji transparentní reporty a právní servis. Přesně jsem věděl, co se děje a proč.“
-            <cite>— Tomáš R., Praha 4</cite>
+            „U domu v Příbrami jsme ocenili rychlost, právní jistotu a skvělou komunikaci makléře.“
+            <cite>— Jiří a Lenka H. | Příbram | Rodinný dům | ⭐⭐⭐⭐⭐</cite>
           </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Časté otázky</p>
-          <h2>Na co se klienti ptají před začátkem spolupráce</h2>
-        </div>
-        <div class="faq-list" role="list">
-          <details>
-            <summary>Kolik mě bude spolupráce stát?</summary>
-            <p>Provize je vždy transparentně domluvená předem a zahrnuje kompletní servis od nacenění až po právní dokončení převodu. Bez skrytých poplatků.</p>
-          </details>
-          <details>
-            <summary>Za jak dlouho lze nemovitost reálně prodat?</summary>
-            <p>Záleží na lokalitě, typu nemovitosti a ceně. Průměrná doba rezervace u správně naceněných nabídek je kolem 14 dní od spuštění inzerce.</p>
-          </details>
-          <details>
-            <summary>Pomůžete i s přípravou bytu nebo domu před focením?</summary>
-            <p>Ano. Součástí spolupráce je doporučení úprav, home staging a koordinace profesionálního focení, aby nabídka působila důvěryhodně a atraktivně.</p>
-          </details>
         </div>
       </div>
     </section>
@@ -411,9 +270,9 @@
     <section class="valuation" id="valuation">
       <div class="container valuation-wrap">
         <div>
-          <p class="eyebrow">Bezplatná konzultace</p>
-          <h2>Chcete vědět, za kolik lze vaši nemovitost opravdu prodat?</h2>
-          <p>Pošlete mi základní údaje a do 24 hodin dostanete orientační cenové rozpětí i doporučení dalšího postupu.</p>
+          <p class="eyebrow">Ocenění zdarma</p>
+          <h2>Nejsilnější lead magnet: zjistěte tržní cenu vaší nemovitosti</h2>
+          <p>Vyplníte krátký formulář, my zpracujeme analýzu trhu a pošleme vám doporučené cenové rozpětí i postup prodeje. Ocenění je zdarma, protože chceme nejdřív ukázat naši hodnotu.</p>
         </div>
         <form class="valuation-form" id="lead-form">
           <input type="text" name="name" placeholder="Jméno a příjmení" required>
@@ -424,7 +283,33 @@
             <input type="checkbox" name="consent" required>
             Souhlasím se zpracováním údajů pro účely zpětného kontaktování.
           </label>
-          <button type="submit" class="btn btn-primary full">Chci odhad zdarma</button>
+          <button type="submit" class="btn btn-primary full">Chci ocenění zdarma</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="insights" id="career">
+      <div class="container insights-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Kariéra</p>
+            <h2>Staň se makléřem v síti MujMakler.cz</h2>
+          </div>
+          <ul class="why-list">
+            <li><span class="material-icons-outlined">paid</span> Motivační provizní model bez stropu</li>
+            <li><span class="material-icons-outlined">storefront</span> Podpora značky a lead generation</li>
+            <li><span class="material-icons-outlined">ads_click</span> Marketingová podpora a obsahový tým</li>
+            <li><span class="material-icons-outlined">gavel</span> Právní zázemí, AML a smluvní dokumentace</li>
+            <li><span class="material-icons-outlined">memory</span> Moderní technologie: CRM, automatizace, reporting</li>
+          </ul>
+        </div>
+        <form class="valuation-form" id="career-form">
+          <input type="text" name="name" placeholder="Jméno" required>
+          <input type="email" name="email" placeholder="E-mail" required>
+          <input type="tel" name="phone" placeholder="Telefon" required>
+          <input type="text" name="location" placeholder="Lokalita působení" required>
+          <button type="submit" class="btn btn-primary full">Mám zájem o kariéru</button>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
@@ -432,31 +317,32 @@
   </main>
 
   <footer class="site-footer" id="contact">
-    <div class="footer-wave" aria-hidden="true"></div>
     <div class="container footer-grid">
       <div>
-        <img src="images/logo.png" alt="Logo mujmakler.cz" class="footer-logo">
-        <p>mujmakler.cz spojuje lokální znalost trhu, moderní marketing a bezpečný právní proces. Každý krok umíme vysvětlit lidsky a srozumitelně.</p>
+        <img src="images/logo.png" alt="Logo MujMakler.cz" class="footer-logo">
+        <p>MujMakler.cz pomáhá prodávat i kupovat nemovitosti v Praze a Středočeském kraji. Cíl je vždy stejný: poptávky, důvěra a výsledky.</p>
       </div>
       <div>
         <h3>Kontakt</h3>
         <ul>
           <li>📞 +420 123 456 789</li>
           <li>✉️ info@mujmakler.cz</li>
-          <li>📍 Praha a Středočeský kraj</li>
+          <li>📍 Na Příkopě 12, Praha 1</li>
+          <li>🌐 Facebook | Instagram | LinkedIn</li>
         </ul>
       </div>
       <div>
-        <h3>Rychlé odkazy</h3>
+        <h3>Rychlý formulář</h3>
         <ul>
-          <li><a href="#services">Služby</a></li>
-          <li><a href="#process">Jak pracuji</a></li>
-          <li><a href="#valuation">Odhad zdarma</a></li>
+          <li><a href="#valuation">Ocenění zdarma</a></li>
+          <li><a href="#career">Kariéra</a></li>
+          <li><a href="#properties">Aktuální nabídka</a></li>
+          <li><a href="#home">Zpět nahoru</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© <span id="year"></span> mujmakler.cz. Všechna práva vyhrazena.</p>
+      <p>© <span id="year"></span> MujMakler.cz. Všechna práva vyhrazena.</p>
     </div>
   </footer>
 
@@ -465,7 +351,7 @@
     {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
-      "name": "mujmakler.cz",
+      "name": "MujMakler.cz",
       "areaServed": "Praha a Středočeský kraj",
       "telephone": "+420123456789",
       "email": "info@mujmakler.cz",
