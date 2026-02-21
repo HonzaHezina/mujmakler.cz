@@ -118,7 +118,7 @@ if (!prefersReducedMotion && supportsHoverPointer) {
     });
   });
 
-  const revealTargets = document.querySelectorAll('.section-head, .service-card, .timeline li, .listing-card, blockquote, .valuation-wrap > *');
+  const revealTargets = document.querySelectorAll('.section-head, .service-card, .timeline li, .why-grid > *, .listing-card, blockquote, .faq-list details, .valuation-wrap > *');
   if (!('IntersectionObserver' in window)) {
     revealTargets.forEach((item) => {
       item.classList.add('is-visible');
@@ -140,3 +140,20 @@ if (!prefersReducedMotion && supportsHoverPointer) {
     revealObserver.observe(item);
   });
 }
+
+
+const faqItems = document.querySelectorAll('.faq-list details');
+
+faqItems.forEach((item) => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) {
+      return;
+    }
+
+    faqItems.forEach((other) => {
+      if (other !== item) {
+        other.open = false;
+      }
+    });
+  });
+});
