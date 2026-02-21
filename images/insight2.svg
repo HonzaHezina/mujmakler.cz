@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" rx="20" fill="#f3f7fb"/>
+  <rect x="110" y="90" width="560" height="340" rx="18" fill="#dbe8f6"/>
+  <circle cx="230" cy="220" r="48" fill="#7ea3d0"/>
+  <circle cx="390" cy="180" r="64" fill="#5d88be"/>
+  <circle cx="520" cy="290" r="76" fill="#3f6fae"/>
+  <circle cx="290" cy="320" r="52" fill="#9bb8db"/>
+  <text x="90" y="475" font-size="42" fill="#36537d" font-family="Arial">Heatmapa poptávky</text>
+</svg>
