@@ -4,6 +4,8 @@ const year = document.getElementById('year');
 const estimateForm = document.getElementById('quick-estimate-form');
 const estimateResult = document.getElementById('estimate-result');
 const leadForm = document.getElementById('lead-form');
+const experienceTabs = document.querySelectorAll('.experience-tab');
+const experiencePanels = document.querySelectorAll('.experience-panel');
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
@@ -118,7 +120,7 @@ if (!prefersReducedMotion && supportsHoverPointer) {
     });
   });
 
-  const revealTargets = document.querySelectorAll('.section-head, .service-card, .timeline li, .why-grid > *, .listing-card, blockquote, .faq-list details, .valuation-wrap > *');
+  const revealTargets = document.querySelectorAll('.section-head, .service-card, .timeline li, .why-grid > *, .listing-card, blockquote, .faq-list details, .valuation-wrap > *, .experience-tab, .experience-panel');
   if (!('IntersectionObserver' in window)) {
     revealTargets.forEach((item) => {
       item.classList.add('is-visible');
@@ -138,6 +140,26 @@ if (!prefersReducedMotion && supportsHoverPointer) {
   revealTargets.forEach((item) => {
     item.classList.add('reveal');
     revealObserver.observe(item);
+  });
+}
+
+if (experienceTabs.length && experiencePanels.length) {
+  const activateTab = (tabName) => {
+    experienceTabs.forEach((tab) => {
+      const isActive = tab.dataset.tab === tabName;
+      tab.classList.toggle('is-active', isActive);
+      tab.setAttribute('aria-selected', String(isActive));
+    });
+
+    experiencePanels.forEach((panel) => {
+      const isActive = panel.dataset.panel === tabName;
+      panel.classList.toggle('is-active', isActive);
+      panel.hidden = !isActive;
+    });
+  };
+
+  experienceTabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateTab(tab.dataset.tab));
   });
 }
 
