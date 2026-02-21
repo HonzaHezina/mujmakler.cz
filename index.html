@@ -40,6 +40,8 @@
 
   <main>
     <section class="hero">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="eyebrow">Realitní makléř pro Prahu a okolí</p>
@@ -48,6 +50,12 @@
           <div class="hero-actions">
             <a href="#valuation" class="btn btn-primary">Bezplatný odhad do 24h</a>
             <a href="#services" class="btn btn-secondary">Jak vám pomůžu</a>
+          </div>
+
+          <div class="hero-chip-row" aria-label="Hodnoty spolupráce">
+            <span class="hero-chip"><span class="material-icons-outlined">bolt</span> Rychlá odezva</span>
+            <span class="hero-chip"><span class="material-icons-outlined">analytics</span> Data-first přístup</span>
+            <span class="hero-chip"><span class="material-icons-outlined">shield</span> Bezpečný proces</span>
           </div>
 
           <ul class="hero-points">
@@ -118,6 +126,55 @@
             <h3>Transparentní reporting</h3>
             <p>Pravidelná data o zájmu, zpětná vazba z prohlídek a jasná doporučení pro další postup.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Přívětivější spolupráce</p>
+          <h2>Interaktivní plán podle vaší situace</h2>
+        </div>
+
+        <div class="experience-wrap">
+          <div class="experience-tabs" role="tablist" aria-label="Scénáře spolupráce">
+            <button class="experience-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="exp-seller" id="tab-seller" data-tab="seller">Prodávám</button>
+            <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="exp-buyer" id="tab-buyer" data-tab="buyer">Kupují</button>
+            <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="exp-investor" id="tab-investor" data-tab="investor">Investuji</button>
+          </div>
+
+          <div class="experience-panels">
+            <article class="experience-panel is-active" id="exp-seller" role="tabpanel" aria-labelledby="tab-seller" data-panel="seller">
+              <h3>Chci prodat bez chaosu a zbytečných kompromisů</h3>
+              <p>Začneme strategií ceny a vizuální prezentací. Poté dostanete jasný plán kampaně i reporting průběhu po dnech, ne po týdnech.</p>
+              <ul>
+                <li>Start kampaně do 5 pracovních dní</li>
+                <li>Týdenní přehled zájmu a doporučení</li>
+                <li>Vyjednání podmínek včetně právního servisu</li>
+              </ul>
+            </article>
+
+            <article class="experience-panel" id="exp-buyer" role="tabpanel" aria-labelledby="tab-buyer" hidden data-panel="buyer">
+              <h3>Hledám nemovitost a nechci se spálit</h3>
+              <p>Pomohu vám od první filtrace nabídek po právní prověrku dokumentů, abyste se rozhodovali rychle a s jistotou.</p>
+              <ul>
+                <li>Rychlá analýza ceny vybrané nemovitosti</li>
+                <li>Kontrola technických i právních rizik</li>
+                <li>Podpora při vyjednání kupní ceny</li>
+              </ul>
+            </article>
+
+            <article class="experience-panel" id="exp-investor" role="tabpanel" aria-labelledby="tab-investor" hidden data-panel="investor">
+              <h3>Chci investovat s důrazem na výnos a likviditu</h3>
+              <p>Vybereme lokality i typy nemovitostí podle cíle investice. Dostanete realistický model výnosu a plán následného pronájmu/prodeje.</p>
+              <ul>
+                <li>Scoring lokalit podle dat a potenciálu</li>
+                <li>Model cash-flow a scénáře rizik</li>
+                <li>Strategie exitu už při nákupu</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
