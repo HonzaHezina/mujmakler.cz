@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <title>MujMakler.cz – Prodej nemovitostí v Praze a Středočeském kraji</title>
+  <meta name="description" content="Prodáváme nemovitosti v Praze a Středočeském kraji rychle, bezpečně a za maximum. Ocenění zdarma, marketing, právní servis.">
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body data-page="home">
+
+<header class="header">
+  <div class="container">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Domů">
+        <img src="assets/img/logo.png" alt="MujMakler.cz logo">
+      </a>
+
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a data-nav href="index.html">Domů</a>
+        <a data-nav href="nemovitosti.html">Nemovitosti</a>
+        <a data-nav href="prodej-nemovitosti.html">Prodej nemovitosti</a>
+        <a data-nav href="sluzby.html">Služby</a>
+        <a data-nav href="makleri.html">Makléři</a>
+        <a data-nav href="reference.html">Reference</a>
+        <a data-nav href="kariera.html">Kariéra</a>
+        <a data-nav href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-primary btn-sm" href="oceneni-zdarma.html">Ocenění zdarma</a>
+        <button class="icon-btn burger" id="burger" aria-label="Menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="container">
+      <nav class="nav" aria-label="Mobilní navigace">
+        <a data-nav href="index.html">Domů</a>
+        <a data-nav href="nemovitosti.html">Nemovitosti</a>
+        <a data-nav href="prodej-nemovitosti.html">Prodej nemovitosti</a>
+        <a data-nav href="sluzby.html">Služby</a>
+        <a data-nav href="makleri.html">Makléři</a>
+        <a data-nav href="reference.html">Reference</a>
+        <a data-nav href="kariera.html">Kariéra</a>
+        <a data-nav href="kontakt.html">Kontakt</a>
+        <a class="btn btn-primary" href="oceneni-zdarma.html" style="margin-top:6px">Ocenění zdarma</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<section class="hero" aria-label="Úvod">
+  <div class="bg" style="background-image:url('assets/img/hero-home.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="container">
+      <div class="kicker">Realitní servis s důrazem na proces</div>
+      <h1 class="title">MujMakler.cz</h1>
+      <p class="subtitle">
+        <strong>Prodáváme nemovitosti v Praze a Středočeském kraji rychle, bezpečně a za maximum.</strong><br>
+        Bez balastu: jasný proces, silný marketing, právní jistota a makléř, který nese odpovědnost.
+      </p>
+
+      <form class="search" id="heroSearchForm" aria-label="Vyhledávání nemovitostí">
+        <input id="heroQuery" type="text" placeholder="Hledat lokalitu, typ, dispozici… (např. Praha 4, 2+kk)" />
+        <select id="heroStatus" class="input" style="max-width:220px">
+          <option value="all">Vše</option>
+          <option value="prodej">Prodej</option>
+          <option value="pronajem">Pronájem</option>
+          <option value="prodano">Prodáno</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Hledat</button>
+      </form>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="prodej-nemovitosti.html">Chci prodat nemovitost</a>
+        <a class="btn btn-outline" href="nemovitosti.html">Hledám nemovitost</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4 features">
+      <div class="card pad item">
+        <div class="dot" aria-hidden="true">⚖️</div>
+        <div>
+          <div class="h3">Právní servis</div>
+          <p class="p">Rezervační smlouvy, kupní smlouvy, úschova, katastr. Bez rizik a překvapení.</p>
+        </div>
+      </div>
+      <div class="card pad item">
+        <div class="dot" aria-hidden="true">📣</div>
+        <div>
+          <div class="h3">Marketing</div>
+          <p class="p">Profesionální fotografie, popis, cílená reklama a práce s poptávkou.</p>
+        </div>
+      </div>
+      <div class="card pad item">
+        <div class="dot" aria-hidden="true">📍</div>
+        <div>
+          <div class="h3">Lokální znalost</div>
+          <p class="p">Praha + Středočeský kraj. Umíme trh, konkurenci i typické chyby v nacenění.</p>
+        </div>
+      </div>
+      <div class="card pad item">
+        <div class="dot" aria-hidden="true">🧠</div>
+        <div>
+          <div class="h3">Moderní technologie</div>
+          <p class="p">Datové srovnání, transparentní reporting, 3D prohlídky (kde dávají smysl).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" style="background:#fff">
+  <div class="container">
+    <div class="center">
+      <div class="kicker">Lidé kupují proces</div>
+      <h2 class="h2">Jak pracujeme</h2>
+      <p class="p">7 kroků, které drží celý prodej pohromadě – od prvního setkání po předání klíčů.</p>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:22px">
+      <div class="card pad">
+        <div class="badge primary">KROK 1</div>
+        <div class="h3" style="margin-top:10px">Úvodní schůzka</div>
+        <p class="p">Cíle, časový plán, dokumenty, očekávání. Nastavíme jasná pravidla.</p>
+      </div>
+      <div class="card pad">
+        <div class="badge primary">KROK 2</div>
+        <div class="h3" style="margin-top:10px">Analýza trhu</div>
+        <p class="p">Srovnání cen, konkurence, prodejní strategie. Správná cena je klíč.</p>
+      </div>
+      <div class="card pad">
+        <div class="badge primary">KROK 3</div>
+        <div class="h3" style="margin-top:10px">Příprava</div>
+        <p class="p">Home staging, fotky, text, půdorys, případně 3D prohlídka.</p>
+      </div>
+      <div class="card pad">
+        <div class="badge primary">KROK 4</div>
+        <div class="h3" style="margin-top:10px">Marketing</div>
+        <p class="p">Portály + cílená reklama. Pracujeme s poptávkou, ne jen s inzerátem.</p>
+      </div>
+      <div class="card pad">
+        <div class="badge primary">KROK 5</div>
+        <div class="h3" style="margin-top:10px">Prohlídky & výběr kupce</div>
+        <p class="p">Kvalifikace zájemců, vyjednávání, výběr nejlepší nabídky.</p>
+      </div>
+      <div class="card pad">
+        <div class="badge primary">KROK 6–7</div>
+        <div class="h3" style="margin-top:10px">Právo & předání</div>
+        <p class="p">Smlouvy, úschova, katastr, přepisy, předávací protokol. Hotovo.</p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:18px">
+      <a class="btn btn-primary" href="jak-pracujeme.html">Zobrazit celý proces</a>
+      <a class="btn btn-ghost" href="sluzby.html">Zjistit více o službách</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:flex; align-items:end; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>
+        <div class="kicker">Aktuální nabídka</div>
+        <h2 class="h2" style="margin:8px 0 0">Vybrané nemovitosti</h2>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="nemovitosti.html">Zobrazit vše</a>
+    </div>
+
+    <div class="grid grid-3" id="featuredProperties" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="callout" style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap">
+      <div>
+        <div class="h3" style="margin:0">Zvyšte hodnotu své nemovitosti</div>
+        <p class="p" style="margin-top:6px">Získejte profesionální <strong>ocenění zdarma</strong> a plán prodeje.</p>
+      </div>
+      <a class="btn btn-primary" href="oceneni-zdarma.html">Získat odhad zdarma</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="center">
+      <div class="kicker">Důvěra je vše</div>
+      <h2 class="h2">Reference klientů</h2>
+      <p class="p">Autentické reference jsou silnější než 100 marketingových vět.</p>
+    </div>
+
+    <div class="grid grid-3" id="refMini" style="margin-top:22px"></div>
+
+    <div class="center" style="margin-top:18px">
+      <a class="btn btn-ghost" href="reference.html">Zobrazit všechny reference</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="center">
+      <div class="kicker">Tváře, které nesou odpovědnost</div>
+      <h2 class="h2">Naši makléři</h2>
+      <p class="p">Každá nemovitost má konkrétního makléře, který vede proces od A do Z.</p>
+    </div>
+    <div class="grid grid-3" id="teamMini" style="margin-top:22px"></div>
+
+    <div class="callout" style="margin-top:18px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>
+        <div style="font-weight:900; font-size:18px">Hledáme nové makléře</div>
+        <div class="small">Silná značka, provizní model, marketing, právní zázemí a technologie.</div>
+      </div>
+      <a class="btn btn-primary" href="kariera.html">Staň se makléřem</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" style="background:#fff">
+  <div class="container">
+    <div class="split">
+      <div class="panel">
+        <div class="kicker">Rychlý kontakt</div>
+        <h2 class="h2" style="margin-top:10px">Napište nám</h2>
+        <p class="p">Chcete prodat, koupit, nebo jen poradit? Ozveme se co nejdřív.</p>
+
+        <form data-form="contact" style="margin-top:14px">
+          <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px">
+            <input class="input" required placeholder="Jméno">
+            <input class="input" required placeholder="Telefon">
+          </div>
+          <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px">
+            <input class="input" type="email" required placeholder="Email">
+            <select class="input">
+              <option>Chci prodat</option>
+              <option>Hledám nemovitost</option>
+              <option>Ocenění zdarma</option>
+              <option>Jiné</option>
+            </select>
+          </div>
+          <textarea required placeholder="Zpráva (stručně)"></textarea>
+          <button class="btn btn-primary" type="submit" style="width:100%">Odeslat</button>
+          <div class="small" style="margin-top:8px">Odesláním souhlasíte se zpracováním údajů dle GDPR (demo).</div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3 class="h3">Kontaktní údaje</h3>
+        <div class="small" style="display:grid; gap:10px; margin-top:10px">
+          <div>📞 <strong>+420 123 456 789</strong></div>
+          <div>✉️ <strong>info@mujmakler.cz</strong></div>
+          <div>📍 <strong>Praha, Česká republika</strong></div>
+        </div>
+        <div class="hr"></div>
+        <img src="assets/img/map.png" alt="Mapa (ukázka)" style="border-radius:14px; border:1px solid var(--border)">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="grid grid-4">
+      <div>
+        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:36px; width:auto; filter:brightness(1.15)">
+        <p class="muted" style="margin-top:10px">
+          Rychlý, bezpečný a transparentní prodej nemovitostí v Praze a Středočeském kraji.
+        </p>
+        <div class="line"></div>
+        <div class="muted small">
+          <div><strong>MujMakler.cz s.r.o.</strong></div>
+          <div>IČO: 01234567</div>
+          <div>Zapsáno v OR (ukázka)</div>
+          <div>Pojištění odpovědnosti (ukázka)</div>
+          <div>AML informace (ukázka)</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:900; margin-bottom:10px">Rychlé odkazy</div>
+        <div class="muted small" style="display:grid; gap:8px">
+          <a href="nemovitosti.html">Nemovitosti</a>
+          <a href="prodej-nemovitosti.html">Prodej nemovitosti</a>
+          <a href="oceneni-zdarma.html">Ocenění zdarma</a>
+          <a href="jak-pracujeme.html">Jak pracujeme</a>
+          <a href="poradna.html">Poradna</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="makleri.html">Makléři</a>
+          <a href="kariera.html">Kariéra</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:900; margin-bottom:10px">Kontakt</div>
+        <div class="muted small" style="display:grid; gap:8px">
+          <div>📞 +420 123 456 789</div>
+          <div>✉️ info@mujmakler.cz</div>
+          <div>📍 Praha, Česká republika</div>
+          <div style="margin-top:10px">
+            <a class="btn btn-primary btn-sm" href="kontakt.html">Napište nám</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight:900; margin-bottom:10px">Newsletter (placeholder)</div>
+        <p class="muted small" style="margin:0 0 10px">
+          Tipy k prodeji a nákupu nemovitostí 1× týdně.
+        </p>
+        <form data-form="newsletter">
+          <input class="input" type="email" placeholder="Email" required>
+          <button class="btn btn-primary" style="width:100%; margin-top:10px" type="submit">Přihlásit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="line"></div>
+    <div class="legal">
+      <span>© 2026 MujMakler.cz</span>
+      <a href="gdpr.html">GDPR</a>
+      <a href="obchodni-podminky.html">Obchodní podmínky</a>
+      <a href="aml.html">AML</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
