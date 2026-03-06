@@ -36,15 +36,43 @@
   }
 
   function handleForms(){
+    const inbox = "petr.novak@mujmakler.cz";
+
+    function buildMailto(form, kind){
+      const fields = [];
+      const controls = Array.from(form.querySelectorAll("input, select, textarea"));
+      controls.forEach((control, index)=>{
+        const clean = String(control.value || "").trim();
+        if(!clean) return;
+        const label = control.name || control.id || control.getAttribute("placeholder") || control.getAttribute("aria-label") || `Pole ${index + 1}`;
+        fields.push(`${label}: ${clean}`);
+      });
+
+      const labels = {
+        valuation: "Rychlý odhad",
+        sell: "Prodej nemovitosti",
+        contact: "Kontaktní formulář",
+        interest: "Zájem o nemovitost",
+        career: "Kariéra",
+        newsletter: "Newsletter"
+      };
+
+      const subject = labels[kind] || "Nová zpráva z webu";
+      const body = [
+        `Zdroj: ${location.href}`,
+        "",
+        ...fields
+      ].join("\n");
+
+      return `mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
     $$("form[data-form]").forEach(form=>{
       form.addEventListener("submit", (e)=>{
         e.preventDefault();
         const kind = form.getAttribute("data-form");
-        toast(kind === "valuation"
-          ? "Díky! Ozveme se vám k ocenění zdarma."
-          : kind === "career"
-            ? "Díky! Ozveme se vám k kariéře v MujMakler.cz."
-            : "Díky! Ozveme se co nejdřív.");
+        window.location.href = buildMailto(form, kind);
+        toast("Díky! Otevíráme váš e-mail s předvyplněnou zprávou.");
         form.reset();
       });
     });
