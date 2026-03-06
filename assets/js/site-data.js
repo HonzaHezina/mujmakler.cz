@@ -5,7 +5,7 @@ window.MUJMAKLER_DATA = {
   },
   "contact": {
     "phone": "+420 123 456 789",
-    "email": "info@mujmakler.cz",
+    "email": "petr.novak@mujmakler.cz",
     "address": "Praha, Česká republika"
   },
   "trust": {

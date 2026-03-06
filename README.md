@@ -20,7 +20,7 @@ python -m http.server 8000
 - Detail nemovitosti (`nemovitost.html?id=p1`) – galerie, parametry, půdorys, mapa, PDF, makléř, formulář „Mám zájem“
 - Makléři (`makleri.html`) – profily, filtry, seřazení, CTA na kariéru
 - Služby (`sluzby.html`) – pro prodávající / pro kupující
-- Ocenění zdarma (`oceneni-zdarma.html`) – landing + formulář + postup + FAQ
+- Rychlý odhad (`rychly-odhad.html`) – landing + formulář + postup + FAQ
 - Jak pracujeme (`jak-pracujeme.html`) – 7 kroků procesu
 - Reference (`reference.html`)
 - Kariéra (`kariera.html`) – provizní model, podpora, form
