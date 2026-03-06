@@ -37,6 +37,7 @@
 
   function handleForms(){
     const inbox = "petr.novak@mujmakler.cz";
+    const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`;
 
     function buildMailto(form, kind){
       const fields = [];
@@ -71,9 +72,66 @@
       form.addEventListener("submit", (e)=>{
         e.preventDefault();
         const kind = form.getAttribute("data-form");
-        window.location.href = buildMailto(form, kind);
-        toast("Díky! Otevíráme váš e-mail s předvyplněnou zprávou.");
-        form.reset();
+        const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.textContent : "";
+
+        const labels = {
+          valuation: "Rychlý odhad",
+          sell: "Prodej nemovitosti",
+          contact: "Kontaktní formulář",
+          interest: "Zájem o nemovitost",
+          career: "Kariéra",
+          newsletter: "Newsletter"
+        };
+
+        const sendWithFallback = () => {
+          window.location.href = buildMailto(form, kind);
+          toast("Nepodařilo se odeslat automaticky. Otevíráme váš e-mail s předvyplněnou zprávou.");
+        };
+
+        if(submitBtn){
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Odesílám…";
+        }
+
+        const fd = new FormData();
+        fd.append("_subject", labels[kind] || "Nová zpráva z webu");
+        fd.append("_template", "table");
+        fd.append("_captcha", "false");
+        fd.append("_source", location.href);
+
+        const controls = Array.from(form.querySelectorAll("input, select, textarea"));
+        controls.forEach((control, index)=>{
+          if(control.type === "submit" || control.type === "button") return;
+          if((control.type === "checkbox" || control.type === "radio") && !control.checked) return;
+
+          const clean = String(control.value || "").trim();
+          if(!clean) return;
+
+          const label = control.name || control.id || control.getAttribute("placeholder") || control.getAttribute("aria-label") || `Pole ${index + 1}`;
+          fd.append(label, clean);
+        });
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: fd
+        })
+          .then(async (res)=>{
+            const payload = await res.json().catch(()=> ({}));
+            if(!res.ok || payload?.success === "false") throw new Error(payload?.message || "Request failed");
+            toast("Děkujeme! Formulář byl odeslán a odpovíme vám co nejdříve.");
+            form.reset();
+          })
+          .catch(()=>{
+            sendWithFallback();
+          })
+          .finally(()=>{
+            if(submitBtn){
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalBtnText;
+            }
+          });
       });
     });
   }
