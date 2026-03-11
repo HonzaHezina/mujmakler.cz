@@ -18,7 +18,7 @@ window.MUJMAKLER_DATA = {
   "brokers": [
     {
       "id": "b1",
-      "name": "Ing. Jan Novák",
+      "name": "Alina Luzarova",
       "role": "Rezidenční prodej • Byty & domy",
       "region": "Praha 7",
       "areas": [
@@ -35,13 +35,13 @@ window.MUJMAKLER_DATA = {
       "sold": 124,
       "reviews": 86,
       "rating": 4.9,
-      "email": "jan.novak@mujmakler.cz",
+      "email": "alina.luzarova@mujmakler.cz",
       "phone": "+420 725 456 789",
       "avatar": "assets/img/broker-1.svg"
     },
     {
       "id": "b2",
-      "name": "Bc. Elena Svobodová",
+      "name": "Michaela Farkas",
       "role": "Luxusní nemovitosti • VIP servis",
       "region": "Praha 1",
       "areas": [
@@ -57,13 +57,13 @@ window.MUJMAKLER_DATA = {
       "sold": 42,
       "reviews": 105,
       "rating": 5.0,
-      "email": "elena.svobodova@mujmakler.cz",
+      "email": "michaela.farkas@mujmakler.cz",
       "phone": "+420 606 874 534",
       "avatar": "assets/img/broker-2.svg"
     },
     {
       "id": "b3",
-      "name": "Marek Dvořák",
+      "name": "Petr Novak",
       "role": "Komerční & investice",
       "region": "Praha 4",
       "areas": [
@@ -80,7 +80,7 @@ window.MUJMAKLER_DATA = {
       "sold": 95,
       "reviews": 64,
       "rating": 4.8,
-      "email": "marek.dvorak@mujmakler.cz",
+      "email": "petr.novak@mujmakler.cz",
       "phone": "+420 555 666 777",
       "avatar": "assets/img/broker-3.svg"
     }
