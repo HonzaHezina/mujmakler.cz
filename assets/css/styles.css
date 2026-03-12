@@ -179,6 +179,60 @@ button,input,select,textarea{font:inherit}
 .hero .search input::placeholder{color:rgba(255,255,255,.70)}
 .hero .search .btn{height:44px}
 
+
+.hero-homepage{
+  min-height:620px;
+}
+.hero-homepage .overlay{
+  background: linear-gradient(180deg, rgba(0,0,0,.56) 0%, rgba(0,0,0,.34) 45%, rgba(0,0,0,.56) 100%);
+}
+.hero-homepage .content{
+  text-align:center;
+}
+.hero-homepage .subtitle{
+  margin:0 auto;
+  max-width:680px;
+  font-size:28px;
+  font-family:"Playfair Display", serif;
+  color:#fff;
+}
+.hero-homepage .hero-actions{
+  justify-content:center;
+  margin-top:30px;
+}
+.hero-homepage .btn{
+  min-width:240px;
+  letter-spacing:.03em;
+  font-size:13px;
+}
+.section-benefits{background:#f2f2f2}
+.features-homepage .item{
+  background:transparent;
+  border:none;
+  padding:6px 0;
+}
+.features-homepage .h3{font-size:32px;font-size:clamp(24px,2vw,32px); margin:10px 0 6px; font-family:"Playfair Display", serif}
+.features-homepage .p{font-size:14px; max-width:340px}
+.features-homepage .dot{
+  width:auto;
+  height:auto;
+  border-radius:0;
+  border:none;
+  background:transparent;
+  font-size:18px;
+  padding-top:12px;
+  position:relative;
+}
+.features-homepage .dot::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:36px;
+  height:2px;
+  background:var(--primary);
+}
+
 /* Cards & grids */
 .grid{display:grid; gap:16px}
 .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
@@ -407,6 +461,10 @@ textarea{min-height:120px; padding:12px; height:auto}
 
 /* Responsive */
 @media (max-width: 980px){
+  .hero-homepage{min-height:540px}
+  .hero-homepage .subtitle{font-size:22px}
+  .hero-homepage .btn{min-width:unset}
+
   .grid-4{grid-template-columns:repeat(2, minmax(0,1fr))}
   .grid-3{grid-template-columns:repeat(2, minmax(0,1fr))}
   .split{grid-template-columns:1fr}
@@ -415,6 +473,8 @@ textarea{min-height:120px; padding:12px; height:auto}
   .gallery .thumbs{grid-template-columns:repeat(3, minmax(0,1fr))}
 }
 @media (max-width: 760px){
+  .features-homepage .h3{font-size:24px}
+
   .nav{display:none}
   .burger{display:grid}
   .h1{font-size:36px}
