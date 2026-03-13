@@ -6,7 +6,6 @@
 
   function fmtPrice(p){
     if(!p) return "";
-    // format with spaces (cs-CZ)
     const s = new Intl.NumberFormat("cs-CZ").format(p);
     return s;
   }
@@ -21,11 +20,84 @@
     t._timer = setTimeout(()=>t.classList.remove("is-open"), 3200);
   }
 
+  /* ── Scroll reveal ── */
+  function initReveal(){
+    const els = $$(".reveal:not(.visible)");
+    if(!els.length) return;
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+
+  /* ── Animovaný čítač ── */
+  function animateCounter(el){
+    const target = parseFloat(el.getAttribute("data-target"));
+    if(isNaN(target)) return;
+    const suffix = el.getAttribute("data-suffix") || "";
+    const isDecimal = el.getAttribute("data-decimal") === "true";
+    const duration = 1600;
+    const start = performance.now();
+    function step(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const val = ease * target;
+      el.textContent = (isDecimal ? (val/10).toFixed(1) : Math.round(val)) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initCounters(){
+    const counters = $$("[data-target]");
+    if(!counters.length) return;
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          animateCounter(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.5});
+    counters.forEach(el=>io.observe(el));
+  }
+
+  /* ── Sticky header scrolled state ── */
+  function initScrollHeader(){
+    const header = $(".header");
+    if(!header) return;
+    window.addEventListener("scroll", ()=>{
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    }, {passive:true});
+  }
+
+  /* ── Back to top ── */
+  function initBackToTop(){
+    const btn = document.createElement("button");
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Zpět nahoru");
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
+    document.body.appendChild(btn);
+    window.addEventListener("scroll", ()=>{
+      btn.classList.toggle("visible", window.scrollY > 400);
+    }, {passive:true});
+    btn.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+  }
+
   function initHeader(){
     const burger = $("#burger");
     const panel = $("#mobilePanel");
     if(burger && panel){
       burger.addEventListener("click", ()=> panel.classList.toggle("is-open"));
+      // close when clicking a nav link on mobile
+      $$("a[data-nav]", panel).forEach(a=>{
+        a.addEventListener("click", ()=> panel.classList.remove("is-open"));
+      });
     }
     // Active link
     const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -186,8 +258,8 @@
     const refBox = document.getElementById("refMini");
     if(!refBox) return;
     const refs = (data.testimonials || []).slice(0,3);
-    refBox.innerHTML = refs.map(t=>`
-      <div class="card pad">
+    refBox.innerHTML = refs.map((t,i)=>`
+      <div class="card pad reveal${i>0?` reveal-delay-${Math.min(i,3)}`:''}">
         <div class="badge primary">★★★★★</div>
         <div style="margin-top:10px; font-weight:800">${esc(t.type)} • ${esc(t.location)}</div>
         <p class="p" style="margin-top:6px">${esc(t.story)}</p>
@@ -204,8 +276,8 @@
     const team = (data.brokers || []).slice(0,3);
     const box = $("#teamMini");
     if(box){
-      box.innerHTML = team.map(b=>`
-        <div class="card pad">
+      box.innerHTML = team.map((b,i)=>`
+        <div class="card pad reveal${i>0?` reveal-delay-${Math.min(i,3)}`:''}">
           <div style="display:flex; gap:12px; align-items:center">
             <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:54px;height:54px;border-radius:14px;border:1px solid var(--border);object-fit:cover">
             <div>
@@ -230,14 +302,15 @@
     const refBox = $("#refMini");
     if(refBox){
       const refs = (data.testimonials || []).slice(0,3);
-      refBox.innerHTML = refs.map(t=>`
-        <div class="card pad">
+      refBox.innerHTML = refs.map((t,i)=>`
+        <div class="card pad reveal${i>0?` reveal-delay-${Math.min(i,3)}`:''}">
           <div class="badge primary">★★★★★</div>
           <div style="margin-top:10px; font-weight:800">${esc(t.type)} • ${esc(t.location)}</div>
           <p class="p" style="margin-top:6px">${esc(t.story)}</p>
           <div class="small" style="margin-top:10px">— ${esc(t.name)}</div>
         </div>
       `).join("");
+      initReveal();
     }
 
     // hero search → listings
@@ -418,9 +491,11 @@
       apply();
     });
 
-    function card(b){
+    function card(b, idx){
+      const delay = idx % 3;
+      const revealClass = `reveal${delay > 0 ? ` reveal-delay-${delay}` : ''}`;
       return `
-      <article class="card pad">
+      <article class="card pad ${revealClass}">
         <div style="display:flex; gap:12px; align-items:center">
           <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:72px;height:72px;border-radius:18px;border:1px solid var(--border);object-fit:cover">
           <div>
@@ -474,7 +549,9 @@
 
       const grid = $("#brokersGrid");
       if(grid){
-        grid.innerHTML = list.map(card).join("");
+        grid.innerHTML = list.map((b,i)=>card(b,i)).join("");
+        // trigger reveal on newly inserted cards
+        initReveal();
         $("#brokerCount") && ($("#brokerCount").textContent = `${list.length} makléřů`);
       }
     }
@@ -486,8 +563,8 @@
     const box = $("#refsGrid");
     if(!box) return;
     const items = data.testimonials || [];
-    box.innerHTML = items.map(t=>`
-      <article class="card pad">
+    box.innerHTML = items.map((t,i)=>`
+      <article class="card pad reveal${i%3>0?` reveal-delay-${i%3}`:''}">
         <div class="badge primary">★★★★★</div>
         <div style="margin-top:10px; font-weight:900">${esc(t.type)}</div>
         <div class="small">${esc(t.location)}</div>
@@ -495,10 +572,15 @@
         <div class="small" style="margin-top:10px">— ${esc(t.name)}</div>
       </article>
     `).join("");
+    initReveal();
   }
 
   function init(){
     initHeader();
+    initScrollHeader();
+    initReveal();
+    initCounters();
+    initBackToTop();
     handleForms();
     initRefMini();
 
