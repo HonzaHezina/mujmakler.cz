@@ -485,6 +485,10 @@ textarea{min-height:120px; padding:12px; height:auto}
   color:#e5e7eb;
   padding:64px 0 48px;
 }
+.footer img{
+  filter:invert(1) !important;
+  mix-blend-mode:screen;
+}
 .footer a{color:#9ca3af; transition:color .15s}
 .footer a:hover{color:var(--primary)}
 .footer .grid{gap:32px}
