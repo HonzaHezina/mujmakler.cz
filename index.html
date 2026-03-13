@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
@@ -57,17 +58,17 @@
 </header>
 
 
-<section class="hero hero-homepage hero-reference" aria-label="Úvod">
-  <div class="bg" style="background-image:url('assets/img/hero-home.svg')"></div>
+<section class="hero hero-homepage" aria-label="Úvod">
+  <img class="hero-img" src="assets/img/hero-home.jpg" alt="Luxusní moderní dům">
   <div class="overlay"></div>
   <div class="content">
     <div class="container">
-      <h1 class="title">MujMakler.cz</h1>
-      <p class="subtitle">Prodej nemovitostí s mezinárodní precizností.</p>
+      <h1 class="title">MujMakler.cz: Prodej nemovitostí s mezinárodní precizností.</h1>
+      <p class="subtitle">Kombinujeme Know-how s hlubokou znalostí trhu pro&nbsp;dosažení maximální ceny.</p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="prodej-nemovitosti.html">CHCI PRODAT / VYKOUPIT</a>
-        <a class="btn btn-outline" href="nemovitosti.html">HLEDÁM NEMOVITOST</a>
+        <a class="btn btn-primary" href="prodej-nemovitosti.html">Chci prodat / Vykoupit</a>
+        <a class="btn btn-outline" href="nemovitosti.html">Hledám nemovitost</a>
       </div>
     </div>
   </div>
@@ -77,21 +78,24 @@
   <div class="container">
     <div class="grid grid-3 features features-homepage">
       <div class="item">
-        <div class="dot" aria-hidden="true">🏠</div>
+        <div class="dot" aria-hidden="true"></div>
+        <span class="material-icons-outlined icon-service" aria-hidden="true">home</span>
         <div>
           <div class="h3">Zastoupení při prodeji</div>
           <p class="p">Personalizovaná strategie pro rezidenční i komerční objekty. Využíváme pokročilý marketing pro oslovení prémiových zájemců.</p>
         </div>
       </div>
       <div class="item">
-        <div class="dot" aria-hidden="true">📈</div>
+        <div class="dot" aria-hidden="true"></div>
+        <span class="material-icons-outlined icon-service" aria-hidden="true">insights</span>
         <div>
           <div class="h3">Okamžitý výkup</div>
           <p class="p">Potřebujete prodat rychle? Nabízíme férové odkupní ceny s garancí nabídky do 48 hodin od první prohlídky.</p>
         </div>
       </div>
       <div class="item">
-        <div class="dot" aria-hidden="true">📉</div>
+        <div class="dot" aria-hidden="true"></div>
+        <span class="material-icons-outlined icon-service" aria-hidden="true">travel_explore</span>
         <div>
           <div class="h3">Datové odhady</div>
           <p class="p">Vycházíme z reálných prodejních dat a pokročilé tržní analytiky. Získejte nejpřesnější ocenění své nemovitosti.</p>
@@ -172,6 +176,18 @@
       </div>
       <a class="btn btn-primary" href="rychly-odhad.html">Získat odhad zdarma</a>
     </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2 class="h2" style="text-align:center;max-width:600px;margin:0 auto 8px">Zvyšte hodnotu své nemovitosti.<br>Získejte profesionální odhad zdarma.</h2>
+    <p class="p" style="text-align:center;margin:0 auto 32px;max-width:480px;font-size:16px">Zadejte svůj e-mail a naši analytici se vám ozvou s tržním oceněním do 24 hodin.</p>
+    <div class="email-row">
+      <input type="email" placeholder="Váš e-mail" aria-label="E-mailová adresa" required>
+      <a class="btn btn-primary" href="rychly-odhad.html">Získat odhad</a>
+    </div>
+    <p class="note">Nezávazně a zcela zdarma</p>
   </div>
 </section>
 
@@ -257,61 +273,48 @@
   <div class="container">
     <div class="grid grid-4">
       <div>
-        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:36px; width:auto; filter:brightness(1.15)">
-        <p class="muted" style="margin-top:10px">
-          Rychlý, bezpečný a transparentní prodej nemovitostí v Praze a Středočeském kraji.
+        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:32px; width:auto; filter:brightness(0) invert(1); margin-bottom:16px">
+        <p class="muted" style="max-width:240px">
+          Prémiová realitní kancelář zaměřená na datovou analytiku a moderní technologie prodeje.
         </p>
-        <div class="line"></div>
-        <div class="muted small">
-          <div><strong>MujMakler.cz s.r.o.</strong></div>
-          <div>IČO: 01234567</div>
-          <div>Zapsáno v OR (ukázka)</div>
-          <div>Pojištění odpovědnosti (ukázka)</div>
-          <div>AML informace (ukázka)</div>
+      </div>
+
+      <div>
+        <div class="col-title">Služby</div>
+        <div style="display:grid; gap:10px">
+          <a href="prodej-nemovitosti.html">Prodej nemovitosti</a>
+          <a href="rychly-odhad.html">Odhad ceny zdarma</a>
+          <a href="sluzby.html">Všechny služby</a>
+          <a href="poradna.html">Poradna</a>
         </div>
       </div>
 
       <div>
-        <div style="font-weight:900; margin-bottom:10px">Rychlé odkazy</div>
-        <div class="muted small" style="display:grid; gap:8px">
-          <a href="nemovitosti.html">Nemovitosti</a>
-          <a href="prodej-nemovitosti.html">Prodej nemovitosti</a>
-          <a href="rychly-odhad.html">Rychlý odhad</a>
+        <div class="col-title">O společnosti</div>
+        <div style="display:grid; gap:10px">
           <a href="jak-pracujeme.html">Jak pracujeme</a>
-          <a href="poradna.html">Poradna</a>
-          <a href="sluzby.html">Služby</a>
           <a href="makleri.html">Makléři</a>
+          <a href="reference.html">Reference</a>
           <a href="kariera.html">Kariéra</a>
         </div>
       </div>
 
       <div>
-        <div style="font-weight:900; margin-bottom:10px">Kontakt</div>
-        <div class="muted small" style="display:grid; gap:8px">
-          <div>📞 +420 123 456 789</div>
-          <div>✉️ petr.novak@mujmakler.cz</div>
-          <div>📍 Praha, Česká republika</div>
-          <div style="margin-top:10px">
+        <div class="col-title">Kontakt</div>
+        <div style="display:grid; gap:10px">
+          <div class="muted small">+420 123 456 789</div>
+          <div class="muted small">info@mujmakler.cz</div>
+          <div class="muted small">Praha, Česká republika</div>
+          <div style="margin-top:6px">
             <a class="btn btn-primary btn-sm" href="kontakt.html">Napište nám</a>
           </div>
         </div>
-      </div>
-
-      <div>
-        <div style="font-weight:900; margin-bottom:10px">Newsletter (placeholder)</div>
-        <p class="muted small" style="margin:0 0 10px">
-          Tipy k prodeji a nákupu nemovitostí 1× týdně.
-        </p>
-        <form data-form="newsletter">
-          <input class="input" type="email" placeholder="Email" required>
-          <button class="btn btn-primary" style="width:100%; margin-top:10px" type="submit">Přihlásit</button>
-        </form>
       </div>
     </div>
 
     <div class="line"></div>
     <div class="legal">
-      <span>© 2026 MujMakler.cz</span>
+      <span>© 2026 MujMakler.cz. Všechna práva vyhrazena.</span>
       <a href="gdpr.html">GDPR</a>
       <a href="obchodni-podminky.html">Obchodní podmínky</a>
       <a href="aml.html">AML</a>
