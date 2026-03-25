@@ -111,8 +111,7 @@
   }
 
   function handleForms(){
-    const inbox = "petr.novak@mujmakler.cz";
-    const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`;
+    const endpoint = "mail.php";
 
     function buildMailto(form, kind){
       const fields = [];
@@ -161,7 +160,7 @@
 
         const sendWithFallback = () => {
           window.location.href = buildMailto(form, kind);
-          toast("Nepodařilo se odeslat automaticky. Otevíráme váš e-mail s předvyplněnou zprávou.");
+          toast("Odeslání selhalo. Otevíráme záložní e-mailového klienta — zpráva je předvyplněná.");
         };
 
         if(submitBtn){
@@ -171,9 +170,8 @@
 
         const fd = new FormData();
         fd.append("_subject", labels[kind] || "Nová zpráva z webu");
-        fd.append("_template", "table");
-        fd.append("_captcha", "false");
         fd.append("_source", location.href);
+        fd.append("_hp", ""); // honeypot (prázdné = člověk)
 
         const controls = Array.from(form.querySelectorAll("input, select, textarea"));
         controls.forEach((control, index)=>{
