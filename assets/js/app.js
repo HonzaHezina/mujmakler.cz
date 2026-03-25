@@ -103,7 +103,10 @@
     const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     $$("a[data-nav]").forEach(a=>{
       const href = (a.getAttribute("href")||"").toLowerCase();
-      if(href === path) a.classList.add("active");
+      if(href === path){
+        a.classList.add("active");
+        a.setAttribute("aria-current", "page");
+      }
     });
   }
 

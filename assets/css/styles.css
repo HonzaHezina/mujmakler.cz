@@ -1,5 +1,4 @@
 /* MujMakler.cz – styles v3 (modern UX/UI redesign) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap');
 
 :root{
   --primary:#D91A1A;
@@ -242,10 +241,12 @@ button,input,select,textarea{font:inherit}
   border:none;
 }
 .features-homepage .icon-service{
-  font-size:36px;
+  width:36px;
+  height:36px;
   color:var(--primary);
   margin-bottom:12px;
   display:block;
+  flex-shrink:0;
 }
 
 /* Cards & grids */

@@ -41,7 +41,7 @@ window.MUJMAKLER_DATA = {
     },
     {
       "id": "b2",
-      "name": "Michaela Farkas",
+      "name": "Michaela Gruberova",
       "role": "Luxusní nemovitosti • VIP servis",
       "region": "Praha 1",
       "areas": [
@@ -57,8 +57,8 @@ window.MUJMAKLER_DATA = {
       "sold": 42,
       "reviews": 105,
       "rating": 5.0,
-      "email": "michaela.farkas@mujmakler.cz",
-      "phone": "+420 606 874 534",
+      "email": "misa@mujmakler.cz",
+      "phone": "+420 776 773 773",
       "avatar": "assets/img/broker-2.svg"
     },
     {

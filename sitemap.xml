@@ -1,51 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mujmakler.cz/index.html</loc>
+    <loc>https://www.mujmakler.cz/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/nemovitosti.html</loc>
+    <loc>https://www.mujmakler.cz/prodej-nemovitosti.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/nemovitost.html</loc>
+    <loc>https://www.mujmakler.cz/rychly-odhad.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/prodej-nemovitosti.html</loc>
+    <loc>https://www.mujmakler.cz/sluzby.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/sluzby.html</loc>
+    <loc>https://www.mujmakler.cz/reference.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/rychly-odhad.html</loc>
+    <loc>https://www.mujmakler.cz/makleri.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/jak-pracujeme.html</loc>
+    <loc>https://www.mujmakler.cz/jak-pracujeme.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/makleri.html</loc>
+    <loc>https://www.mujmakler.cz/poradna.html</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/reference.html</loc>
+    <loc>https://www.mujmakler.cz/kariera.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/kariera.html</loc>
+    <loc>https://www.mujmakler.cz/kontakt.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/kontakt.html</loc>
+    <loc>https://www.mujmakler.cz/gdpr.html</loc>
+    <priority>0.2</priority>
+    <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/poradna.html</loc>
+    <loc>https://www.mujmakler.cz/obchodni-podminky.html</loc>
+    <priority>0.2</priority>
+    <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/gdpr.html</loc>
+    <loc>https://www.mujmakler.cz/aml.html</loc>
+    <priority>0.2</priority>
+    <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://mujmakler.cz/obchodni-podminky.html</loc>
-  </url>
-  <url>
-    <loc>https://mujmakler.cz/aml.html</loc>
-  </url>
-  <url>
-    <loc>https://mujmakler.cz/cookies.html</loc>
+    <loc>https://www.mujmakler.cz/cookies.html</loc>
+    <priority>0.2</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>

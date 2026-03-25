@@ -13,7 +13,11 @@
       "Bash(done)",
       "Bash(do)",
       "Bash(echo \"=== $f.html ===\")",
-      "Read(//c/Users/janhe/projekty/mujmakler.cz/**)"
+      "Read(//c/Users/janhe/projekty/mujmakler.cz/**)",
+      "Bash(grep -rn \"material-icons\\\\|Material Icons\" C:/Users/janhe/projekty/mujmakler.cz/*.html)",
+      "Bash(xargs echo:*)",
+      "Bash(python fix_heads.py)",
+      "Bash(del:*)"
     ]
   }
 }
