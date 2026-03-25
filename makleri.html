@@ -60,17 +60,24 @@
 </header>
 
 
-<section class="section-sm" style="background:#fff">
+<section class="page-hero">
   <div class="container">
-    <div class="kicker">Makléři</div>
-    <h1 class="h1" style="margin-bottom:8px">Profesionální tým</h1>
-    <p class="p">
+    <nav class="breadcrumb" aria-label="Navigace drobečků">
+      <a href="index.html">Domů</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <span aria-current="page">Makléři</span>
+    </nav>
+    <div class="kicker">Náš tým</div>
+    <h1 class="ph-title">Profesionální tým</h1>
+    <p class="ph-subtitle">
       Každý makléř má vlastní profil, lokalitu působení a odpovědnost za výsledek.
-      To je klíčové i pro důvěru i pro nábor.
+      To je klíčové pro důvěru i pro nábor.
     </p>
+  </div>
+</section>
 
-    <div class="hr"></div>
-
+<section class="section-sm section-alt">
+  <div class="container">
     <div class="filters" style="justify-content:space-between">
       <div class="filters" style="gap:10px">
         <input id="brokerSearch" class="input" placeholder="Hledat makléře / specializaci…" style="min-width:280px">
@@ -82,7 +89,6 @@
       </div>
       <div class="small" id="brokerCount"></div>
     </div>
-
     <div class="tabs" id="regionChips" style="margin-top:12px"></div>
   </div>
 </section>
