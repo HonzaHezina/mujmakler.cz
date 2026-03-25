@@ -668,8 +668,8 @@ textarea{min-height:120px; padding:12px; height:auto}
 
 /* Skip navigation link (keyboard accessibility) */
 .skip-link{
-  position:absolute;
-  top:-100%;
+  position:fixed;
+  top:8px;
   left:24px;
   z-index:200;
   background:var(--primary);
@@ -680,10 +680,11 @@ textarea{min-height:120px; padding:12px; height:auto}
   font-size:13px;
   letter-spacing:.04em;
   text-transform:uppercase;
-  transition:top .2s ease;
+  transform:translateY(calc(-100% - 16px));
+  transition:transform .2s ease;
   white-space:nowrap;
 }
-.skip-link:focus{top:8px}
+.skip-link:focus{transform:translateY(0)}
 
 /* Focus ring for keyboard users */
 :focus-visible{
