@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(grep -n \"emoji\\\\|📞\\\\|✉️\\\\|📍\\\\|🏠\\\\|⭐\\\\|📌\\\\|💡\\\\|🔑\" C:/Users/janhe/projekty/mujmakler.cz/*.html)"
+      "Bash(grep -n \"emoji\\\\|📞\\\\|✉️\\\\|📍\\\\|🏠\\\\|⭐\\\\|📌\\\\|💡\\\\|🔑\" C:/Users/janhe/projekty/mujmakler.cz/*.html)",
+      "Bash(grep -c \"Facebook MujMakler\" *.html)",
+      "Bash(grep -c \"loading=\"\"lazy\"\"\" *.html)",
+      "Bash(ls C:/Users/janhe/projekty/mujmakler.cz/*.html)",
+      "Bash(ls C:/Users/janhe/projekty/mujmakler.cz/nemovitost*.html)",
+      "Bash(for f:*)",
+      "Bash(do grep:*)",
+      "Bash(echo \"CHYBÍ OG: $f\")",
+      "Bash(done)",
+      "Bash(do)",
+      "Bash(echo \"=== $f.html ===\")",
+      "Read(//c/Users/janhe/projekty/mujmakler.cz/**)"
     ]
   }
 }

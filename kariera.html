@@ -3,7 +3,14 @@
 <head>
   <title>Kariéra – Staň se makléřem | MujMakler.cz</title>
   <meta name="description" content="Kariéra v MujMakler.cz: provizní model, podpora značky, marketing, právní zázemí, moderní technologie a formulář pro zájemce.">
-  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MujMakler.cz">
+  <meta property="og:title" content="Kariéra – Staň se makléřem | MujMakler.cz">
+  <meta property="og:description" content="Kariéra v MujMakler.cz: provizní model, podpora značky, marketing, právní zázemí, moderní technologie a formulář pro zájemce.">
+  <meta property="og:url" content="https://www.mujmakler.cz/kariera.html">
+  <meta property="og:image" content="https://www.mujmakler.cz/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +21,7 @@
 
 </head>
 <body data-page="career">
-
+<a class="skip-link" href="#hlavni-obsah">Přeskočit na obsah</a>
 <header class="header">
   <div class="container">
     <div class="inner">
@@ -59,7 +66,7 @@
   </div>
 </header>
 
-
+<main id="hlavni-obsah">
 <section class="page-hero">
   <div class="container">
     <nav class="breadcrumb" aria-label="Navigace drobečků">
@@ -126,9 +133,18 @@
           Napište nám pár vět o sobě. Ozveme se a probereme spolupráci.
         </p>
         <div class="small" style="display:grid; gap:10px; color:rgba(255,255,255,.92)">
-          <div>📞 <strong>+420 123 456 789</strong></div>
-          <div>✉️ <strong>kariera@mujmakler.cz</strong></div>
-          <div>📍 Praha & Středočeský kraj</div>
+          <div class="contact-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.81 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.07 6.07l1.1-1.1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <strong>+420 123 456 789</strong>
+          </div>
+          <div class="contact-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <strong>kariera@mujmakler.cz</strong>
+          </div>
+          <div class="contact-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <strong>Praha &amp; Středočeský kraj</strong>
+          </div>
         </div>
         <div class="hr" style="background: rgba(255,255,255,.18)"></div>
         <div class="small" style="color:rgba(255,255,255,.86)">
@@ -140,19 +156,37 @@
         <h3 class="h3">Přihláška</h3>
         <form data-form="career" style="margin-top:12px">
           <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px">
-            <input class="input" required placeholder="Jméno">
-            <input class="input" required placeholder="Příjmení">
+            <div class="form-field">
+              <label for="c-firstname">Jméno</label>
+              <input class="input" id="c-firstname" name="firstname" required placeholder="Jan" autocomplete="given-name">
+            </div>
+            <div class="form-field">
+              <label for="c-lastname">Příjmení</label>
+              <input class="input" id="c-lastname" name="lastname" required placeholder="Novák" autocomplete="family-name">
+            </div>
           </div>
           <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px">
-            <input class="input" type="email" required placeholder="Email">
-            <input class="input" required placeholder="Telefon">
+            <div class="form-field">
+              <label for="c-email">E-mail</label>
+              <input class="input" id="c-email" name="email" type="email" required placeholder="jan@example.cz" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="c-phone">Telefon</label>
+              <input class="input" id="c-phone" name="phone" required placeholder="+420 xxx xxx xxx" type="tel" inputmode="tel" autocomplete="tel">
+            </div>
           </div>
-          <select class="input" style="margin-top:12px">
-            <option>Praha</option>
-            <option>Středočeský kraj</option>
-            <option>Praha + Středočeský kraj</option>
-          </select>
-          <textarea required placeholder="Zpráva: zkušenosti, lokalita, proč MujMakler.cz…"></textarea>
+          <div class="form-field" style="margin-top:12px">
+            <label for="c-region">Lokalita</label>
+            <select class="input" id="c-region" name="region">
+              <option>Praha</option>
+              <option>Středočeský kraj</option>
+              <option>Praha + Středočeský kraj</option>
+            </select>
+          </div>
+          <div class="form-field" style="margin-top:12px">
+            <label for="c-message">Zpráva</label>
+            <textarea class="input" id="c-message" name="message" required placeholder="Zkušenosti, lokalita, proč MujMakler.cz…"></textarea>
+          </div>
           <button class="btn btn-primary" type="submit" style="width:100%">Odeslat přihlášku</button>
           <div class="small" style="margin-top:8px">Po odeslání se otevře váš e-mail s předvyplněnou zprávou na petr.novak@mujmakler.cz.</div>
         </form>
@@ -161,12 +195,13 @@
   </div>
 </section>
 
+</main>
 
 <footer class="footer">
   <div class="container">
     <div class="grid grid-4">
       <div>
-        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:32px; width:auto; filter:brightness(0) invert(1); margin-bottom:16px">
+        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:32px; width:auto; filter:brightness(0) invert(1); margin-bottom:16px" loading="lazy">
         <p class="muted" style="max-width:240px">
           Prémiová realitní kancelář zaměřená na datovou analytiku a moderní technologie prodeje.
         </p>
@@ -200,6 +235,17 @@
           <div class="muted small">Praha, Česká republika</div>
           <div style="margin-top:6px">
             <a class="btn btn-primary btn-sm" href="kontakt.html">Napište nám</a>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:12px">
+            <a href="#" aria-label="Facebook MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
           </div>
         </div>
       </div>

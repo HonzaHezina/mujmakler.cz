@@ -3,7 +3,14 @@
 <head>
   <title>Kontakt – MujMakler.cz</title>
   <meta name="description" content="Kontakt na MujMakler.cz: telefon, email, sídlo, mapa a rychlý formulář.">
-  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MujMakler.cz">
+  <meta property="og:title" content="Kontakt – MujMakler.cz">
+  <meta property="og:description" content="Kontakt na MujMakler.cz: telefon, email, sídlo, mapa a rychlý formulář.">
+  <meta property="og:url" content="https://www.mujmakler.cz/kontakt.html">
+  <meta property="og:image" content="https://www.mujmakler.cz/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +21,7 @@
 
 </head>
 <body data-page="contact">
-
+<a class="skip-link" href="#hlavni-obsah">Přeskočit na obsah</a>
 <header class="header">
   <div class="container">
     <div class="inner">
@@ -59,7 +66,7 @@
   </div>
 </header>
 
-
+<main id="hlavni-obsah">
 <section class="page-hero">
   <div class="container">
     <nav class="breadcrumb" aria-label="Navigace drobečků">
@@ -80,20 +87,34 @@
         <h3 class="h3">Rychlý formulář</h3>
         <form data-form="contact" style="margin-top:12px">
           <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px">
-            <input class="input" required placeholder="Jméno">
-            <input class="input" required placeholder="Telefon">
+            <div class="form-field">
+              <label for="k-name">Jméno</label>
+              <input class="input" id="k-name" name="name" required placeholder="Jan Novák" autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="k-phone">Telefon</label>
+              <input class="input" id="k-phone" name="phone" required placeholder="+420 xxx xxx xxx" type="tel" inputmode="tel" autocomplete="tel">
+            </div>
           </div>
           <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px">
-            <input class="input" type="email" required placeholder="Email">
-            <select class="input">
-              <option>Chci prodat nemovitost</option>
-              <option>Hledám nemovitost</option>
-              <option>Rychlý odhad</option>
-              <option>Kariéra</option>
-              <option>Jiné</option>
-            </select>
+            <div class="form-field">
+              <label for="k-email">E-mail</label>
+              <input class="input" id="k-email" name="email" type="email" required placeholder="jan@example.cz" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="k-topic">Téma</label>
+              <select class="input" id="k-topic" name="topic">
+                <option>Chci prodat</option>
+                <option>Hledám nemovitost</option>
+                <option>Rychlý odhad</option>
+                <option>Jiné</option>
+              </select>
+            </div>
           </div>
-          <textarea required placeholder="Zpráva"></textarea>
+          <div class="form-field" style="margin-top:12px">
+            <label for="k-message">Zpráva</label>
+            <textarea class="input" id="k-message" name="message" required placeholder="Stručně popište váš záměr..."></textarea>
+          </div>
           <button class="btn btn-primary" type="submit" style="width:100%">Odeslat</button>
           <div class="small" style="margin-top:8px">Po odeslání se otevře váš e-mail s předvyplněnou zprávou na petr.novak@mujmakler.cz.</div>
         </form>
@@ -121,7 +142,7 @@
       <div class="panel reveal reveal-delay-1">
         <h3 class="h3">Mapa</h3>
         <p class="p">Ukázková mapa pro statický web (v reálném webu embed Google/Mapy.cz).</p>
-        <img src="assets/img/map.png" alt="Mapa (ukázka)" style="border-radius:14px; border:1px solid var(--border); margin-top:12px">
+        <img src="assets/img/map.png" alt="Mapa (ukázka)" style="border-radius:14px; border:1px solid var(--border); margin-top:12px" loading="lazy">
         <div class="hr"></div>
         <div class="callout">
           <div style="font-weight:900">Tip pro SEO:</div>
@@ -132,12 +153,13 @@
   </div>
 </section>
 
+</main>
 
 <footer class="footer">
   <div class="container">
     <div class="grid grid-4">
       <div>
-        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:32px; width:auto; filter:brightness(0) invert(1); margin-bottom:16px">
+        <img src="assets/img/logo.png" alt="MujMakler.cz logo" style="height:32px; width:auto; filter:brightness(0) invert(1); margin-bottom:16px" loading="lazy">
         <p class="muted" style="max-width:240px">
           Prémiová realitní kancelář zaměřená na datovou analytiku a moderní technologie prodeje.
         </p>
@@ -171,6 +193,17 @@
           <div class="muted small">Praha, Česká republika</div>
           <div style="margin-top:6px">
             <a class="btn btn-primary btn-sm" href="kontakt.html">Napište nám</a>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:12px">
+            <a href="#" aria-label="Facebook MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram MujMakler.cz" style="color:#9ca3af; transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
           </div>
         </div>
       </div>
