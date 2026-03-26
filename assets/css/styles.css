@@ -1,26 +1,12 @@
 /* MujMakler.cz – styles v3 (modern UX/UI redesign) */
 
-/* ── View Transitions – plynulá navigace mezi stránkami ── */
-@view-transition { navigation: auto; }
-
-/* Pouze main animujeme – header/footer jsou součástí root (animation:none) a nehýbají se */
-main { view-transition-name: main-content; }
-
-/* Root neanimujeme – header a footer tak zůstávají staticky na místě */
-::view-transition-old(root),
-::view-transition-new(root){ animation: none }
-
-/* Pouze obsah stránky fade in/out */
-@keyframes mm-fade-out{ from{opacity:1} to{opacity:0} }
-@keyframes mm-fade-in { from{opacity:0} to{opacity:1} }
-::view-transition-old(main-content){ animation: mm-fade-out .16s ease forwards }
-::view-transition-new(main-content){ animation: mm-fade-in  .16s ease forwards }
+/* View Transitions – záměrně vypnuty, způsobovaly vizuální skok headeru */
 
 /* Placeholder pro JS-injektovanou hlavičku (zabraňuje layout shift) */
 #site-header:empty{
   display:block;
   height:68px;
-  background:rgba(255,255,255,.95);
+  background:#fff;
   border-bottom:1px solid #E5E7EB;
 }
 #site-footer:empty{
@@ -107,9 +93,7 @@ button,input,select,textarea{font:inherit}
 /* Header */
 .header{
   position:sticky; top:0; z-index:50;
-  background: rgba(255,255,255,.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #fff;
   border-bottom:1px solid var(--border);
   transition:box-shadow var(--transition);
 }
