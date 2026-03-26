@@ -145,6 +145,10 @@ button,input,select,textarea{font:inherit}
   border-top:1px solid var(--border);
   background:rgba(255,255,255,.97);
   backdrop-filter: blur(16px);
+  position:absolute; /* position under header and overlay content */
+  left:0; right:0; top:100%;
+  z-index:999; /* ensure it appears above page content */
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 .mobile-panel .nav{
   flex-direction:column; align-items:stretch;

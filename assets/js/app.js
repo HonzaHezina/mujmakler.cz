@@ -91,11 +91,14 @@
     const burger = $("#burger");
     const panel = $("#mobilePanel");
     if(burger && panel){
-      burger.addEventListener("click", ()=>{
+      const toggleFn = ()=>{
         const open = panel.classList.toggle("is-open");
         burger.setAttribute("aria-expanded", open ? "true" : "false");
         panel.setAttribute("aria-hidden", open ? "false" : "true");
-      });
+      };
+      burger.addEventListener("click", toggleFn);
+      // touchstart handler prevents the synthetic click that follows on some devices
+      burger.addEventListener("touchstart", (e)=>{ e.preventDefault(); toggleFn(); }, {passive:false});
       // close when clicking a nav link on mobile
       $$("a[data-nav]", panel).forEach(a=>{
         a.addEventListener("click", ()=>{
@@ -122,6 +125,13 @@
       // Use capture=false (default). Add only once.
       if(!document._mujmakler_delegated_menu){
         document.addEventListener('click', delegatedHandler);
+        // also handle touchstart delegates (prevent duplicate clicks by preventing default here)
+        document.addEventListener('touchstart', (e)=>{
+          const t = e.target && e.target.closest && e.target.closest('#burger');
+          if(!t) return;
+          e.preventDefault();
+          delegatedHandler(e);
+        }, {passive:false});
         document._mujmakler_delegated_menu = true;
       }
     }
