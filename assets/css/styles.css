@@ -3,18 +3,12 @@
 /* ── View Transitions – plynulá navigace mezi stránkami ── */
 @view-transition { navigation: auto; }
 
-/* Názvy elementů pro VT: header/footer zůstávají na místě, animuje se jen main */
-.header { view-transition-name: site-header; }
-.footer  { view-transition-name: site-footer; }
-main    { view-transition-name: main-content; }
+/* Pouze main animujeme – header/footer jsou součástí root (animation:none) a nehýbají se */
+main { view-transition-name: main-content; }
 
-/* Root neanimujeme */
+/* Root neanimujeme – header a footer tak zůstávají staticky na místě */
 ::view-transition-old(root),
 ::view-transition-new(root){ animation: none }
-
-/* Header a footer se NEanimují – nezmizí při přechodu */
-::view-transition-old(site-header), ::view-transition-new(site-header),
-::view-transition-old(site-footer), ::view-transition-new(site-footer){ animation: none }
 
 /* Pouze obsah stránky fade in/out */
 @keyframes mm-fade-out{ from{opacity:1} to{opacity:0} }
