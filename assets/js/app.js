@@ -98,8 +98,6 @@
         try{ document.documentElement.classList.toggle('mm-menu-open', !!open); }catch(_){}
       };
       burger.addEventListener("click", toggleFn);
-      // touchstart handler prevents the synthetic click that follows on some devices
-      burger.addEventListener("touchstart", (e)=>{ e.preventDefault(); toggleFn(); }, {passive:false});
       // close when clicking a nav link on mobile
       $$("a[data-nav]", panel).forEach(a=>{
         a.addEventListener("click", ()=>{

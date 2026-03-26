@@ -141,7 +141,7 @@ button,input,select,textarea{font:inherit}
   transition:all var(--transition);
 }
 .icon-btn:hover{box-shadow:var(--shadow-sm); border-color:#ccc}
-.burger{display:none}
+.burger{display:none; touch-action:manipulation}
 
 /* Mobile menu */
 .mobile-panel{
