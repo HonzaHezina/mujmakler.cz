@@ -90,12 +90,9 @@
   function initHeader(){
     const burger = $("#burger");
     const panel = $("#mobilePanel");
-    console.log('[menu] burger:', burger, 'panel:', panel);
     if(burger && panel){
       const toggleFn = ()=>{
-        console.log('[menu] click fired, toggling is-open');
         const open = panel.classList.toggle("is-open");
-        console.log('[menu] is-open now:', open, 'panel display:', getComputedStyle(panel).display);
         burger.setAttribute("aria-expanded", open ? "true" : "false");
         panel.setAttribute("aria-hidden", open ? "false" : "true");
         try{ document.documentElement.classList.toggle('mm-menu-open', !!open); }catch(_){}
