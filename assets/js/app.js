@@ -110,38 +110,6 @@
       });
     }
 
-    // Delegated fallback: if for some reason the direct listener isn't attached
-    // (timing, injection, touch quirks), handle clicks on the document and
-    // toggle the mobile panel when the #burger is clicked.
-    if(typeof document !== 'undefined'){
-      const delegatedHandler = (e)=>{
-        const target = e.target && e.target.closest && e.target.closest('#burger');
-        if(!target) return;
-        const panelEl = document.getElementById('mobilePanel');
-        if(!panelEl) return;
-        const isOpen = panelEl.classList.toggle('is-open');
-        target.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        panelEl.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-      };
-      // Use capture=false (default). Add only once.
-      if(!document._mujmakler_delegated_menu){
-        document.addEventListener('click', delegatedHandler);
-        // also handle touchstart delegates (prevent duplicate clicks by preventing default here)
-        document.addEventListener('touchstart', (e)=>{
-          const t = e.target && e.target.closest && e.target.closest('#burger');
-          if(!t) return;
-          e.preventDefault();
-          delegatedHandler(e);
-        }, {passive:false});
-        // pointer events fallback (covers many touch / pen / mouse cases)
-        document.addEventListener('pointerdown', (e)=>{
-          const t = e.target && e.target.closest && e.target.closest('#burger');
-          if(!t) return;
-          delegatedHandler(e);
-        }, {passive:true});
-        document._mujmakler_delegated_menu = true;
-      }
-    }
     // Active link
     const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     $$("a[data-nav]").forEach(a=>{
