@@ -2,10 +2,25 @@
 
 /* ── View Transitions – plynulá navigace mezi stránkami ── */
 @view-transition { navigation: auto; }
-::view-transition-old(root){ animation: mm-fade-out .18s ease forwards }
-::view-transition-new(root){ animation: mm-fade-in  .18s ease forwards }
+
+/* Názvy elementů pro VT: header/footer zůstávají na místě, animuje se jen main */
+.header { view-transition-name: site-header; }
+.footer  { view-transition-name: site-footer; }
+main    { view-transition-name: main-content; }
+
+/* Root neanimujeme */
+::view-transition-old(root),
+::view-transition-new(root){ animation: none }
+
+/* Header a footer se NEanimují – nezmizí při přechodu */
+::view-transition-old(site-header), ::view-transition-new(site-header),
+::view-transition-old(site-footer), ::view-transition-new(site-footer){ animation: none }
+
+/* Pouze obsah stránky fade in/out */
 @keyframes mm-fade-out{ from{opacity:1} to{opacity:0} }
 @keyframes mm-fade-in { from{opacity:0} to{opacity:1} }
+::view-transition-old(main-content){ animation: mm-fade-out .16s ease forwards }
+::view-transition-new(main-content){ animation: mm-fade-in  .16s ease forwards }
 
 /* Placeholder pro JS-injektovanou hlavičku (zabraňuje layout shift) */
 #site-header:empty{
@@ -120,9 +135,10 @@ button,input,select,textarea{font:inherit}
   font-size:14px; font-weight:500;
 }
 .nav a{
-  padding:8px 14px;
+  padding:8px 12px;
   border-radius:var(--radius);
   color:var(--text);
+  white-space:nowrap;
   transition:color var(--transition), background var(--transition);
 }
 .nav a:hover{color:var(--primary); background:var(--primary-light)}
@@ -550,6 +566,11 @@ img[loading="lazy"].loaded{opacity:1}
 .toast.is-open{display:block}
 
 /* Responsive */
+/* Mid desktop (900–1100px): kompaktní nav, bez CTA tlačítka */
+@media (max-width: 1100px) and (min-width: 901px){
+  .nav a{padding:8px 8px; font-size:13px}
+  .header-cta .btn{display:none}
+}
 @media (max-width: 980px){
   .grid-4{grid-template-columns:repeat(2, minmax(0,1fr))}
   .grid-3{grid-template-columns:repeat(2, minmax(0,1fr))}
@@ -560,7 +581,7 @@ img[loading="lazy"].loaded{opacity:1}
   .trust-bar .inner, .trust-bar-inner{gap:28px}
   .trust-divider{display:none}
 }
-@media (max-width: 760px){
+@media (max-width: 900px){
   .nav{display:none}
   .burger{display:grid}
   .h1{font-size:36px}
