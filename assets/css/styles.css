@@ -568,7 +568,7 @@ img[loading="lazy"].loaded{opacity:1}
   .trust-divider{display:none}
 }
 @media (max-width: 900px){
-  .nav{display:none}
+  .header .inner .nav{display:none}
   .burger{display:grid}
   .h1{font-size:36px}
   .h2{font-size:27px}
