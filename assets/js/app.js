@@ -95,6 +95,7 @@
         const open = panel.classList.toggle("is-open");
         burger.setAttribute("aria-expanded", open ? "true" : "false");
         panel.setAttribute("aria-hidden", open ? "false" : "true");
+        try{ document.documentElement.classList.toggle('mm-menu-open', !!open); }catch(_){}
       };
       burger.addEventListener("click", toggleFn);
       // touchstart handler prevents the synthetic click that follows on some devices
@@ -132,6 +133,12 @@
           e.preventDefault();
           delegatedHandler(e);
         }, {passive:false});
+        // pointer events fallback (covers many touch / pen / mouse cases)
+        document.addEventListener('pointerdown', (e)=>{
+          const t = e.target && e.target.closest && e.target.closest('#burger');
+          if(!t) return;
+          delegatedHandler(e);
+        }, {passive:true});
         document._mujmakler_delegated_menu = true;
       }
     }

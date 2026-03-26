@@ -106,6 +106,10 @@ button,input,select,textarea{font:inherit}
   box-shadow: 0 4px 24px rgba(0,0,0,.08);
   border-bottom-color:transparent;
 }
+
+/* Debug / visual cue when mobile menu is open (helps verify toggle on devices) */
+.mm-menu-open .header{ box-shadow: 0 10px 40px rgba(0,0,0,.12); }
+.mm-menu-open .header .icon-btn{ transform: translateY(-1px); box-shadow: 0 6px 18px rgba(217,26,26,.12); }
 .header .inner{
   height:68px;
   display:flex; align-items:center; justify-content:space-between;
