@@ -78,11 +78,9 @@
 
   /* ── Back to top ── */
   function initBackToTop(){
-    const btn = document.createElement("button");
-    btn.className = "back-to-top";
-    btn.setAttribute("aria-label", "Zpět nahoru");
-    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
-    document.body.appendChild(btn);
+    // tlačítko vloží layout.js – stačí ho najít a přidat logiku
+    const btn = $("#backToTop") || $(".back-to-top");
+    if(!btn) return;
     window.addEventListener("scroll", ()=>{
       btn.classList.toggle("visible", window.scrollY > 400);
     }, {passive:true});
@@ -93,10 +91,18 @@
     const burger = $("#burger");
     const panel = $("#mobilePanel");
     if(burger && panel){
-      burger.addEventListener("click", ()=> panel.classList.toggle("is-open"));
+      burger.addEventListener("click", ()=>{
+        const open = panel.classList.toggle("is-open");
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+        panel.setAttribute("aria-hidden", open ? "false" : "true");
+      });
       // close when clicking a nav link on mobile
       $$("a[data-nav]", panel).forEach(a=>{
-        a.addEventListener("click", ()=> panel.classList.remove("is-open"));
+        a.addEventListener("click", ()=>{
+          panel.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
+          panel.setAttribute("aria-hidden", "true");
+        });
       });
     }
     // Active link
