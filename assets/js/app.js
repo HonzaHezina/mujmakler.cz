@@ -1,4 +1,4 @@
-/* MujMakler.cz demo – vanilla JS */
+/* MujMakler.cz – vanilla JS */
 (function(){
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
@@ -239,16 +239,16 @@
       box.innerHTML = team.map((b,i)=>`
         <div class="card pad reveal${i>0?` reveal-delay-${Math.min(i,3)}`:''}">
           <div style="display:flex; gap:12px; align-items:center">
-            <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:54px;height:54px;border-radius:14px;border:1px solid var(--border);object-fit:cover">
+            <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:54px;height:54px;border-radius:14px;border:1px solid var(--border);object-fit:cover;flex-shrink:0">
             <div>
               <div style="font-weight:900">${esc(b.name)}</div>
-              <div class="small">${esc(b.region)} • ${esc(b.role)}</div>
+              <div class="small" style="color:var(--muted)">${esc(b.region)} • ${esc(b.role)}</div>
             </div>
           </div>
           <div class="hr"></div>
           <div class="small" style="display:flex; gap:10px; flex-wrap:wrap">
-            <span class="badge">Prodáno: ${esc(b.sold)}</span>
-            <span class="badge">Hodnocení: ${esc(b.rating)}</span>
+            <span class="badge"><strong>${esc(b.sold)}</strong> prodáno</span>
+            <span class="badge">★ ${esc(b.rating)}</span>
           </div>
           <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
             <a class="btn btn-ghost btn-sm" href="makleri.html">Profil</a>
@@ -307,35 +307,39 @@
       const revealClass = `reveal${delay > 0 ? ` reveal-delay-${delay}` : ''}`;
       return `
       <article class="card pad ${revealClass}">
-        <div style="display:flex; gap:12px; align-items:center">
-          <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:72px;height:72px;border-radius:18px;border:1px solid var(--border);object-fit:cover">
+        <div style="display:flex; gap:14px; align-items:center">
+          <img src="${esc(b.avatar)}" alt="${esc(b.name)}" style="width:72px;height:72px;border-radius:18px;border:1px solid var(--border);object-fit:cover;flex-shrink:0">
           <div>
             <div style="font-weight:900; font-size:16px">${esc(b.name)}</div>
-            <div class="small">${esc(b.role)}</div>
-            <div class="small">${esc(b.region)}</div>
+            <div class="small" style="color:var(--muted)">${esc(b.role)}</div>
+            <div class="small" style="margin-top:2px; color:var(--primary); font-weight:600">${esc(b.region)}</div>
           </div>
         </div>
         <div class="hr"></div>
-        <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px">
-          <div class="card pad" style="padding:10px">
-            <div class="small">Prodáno</div>
-            <div style="font-weight:900">${esc(b.sold)}</div>
+        <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px">
+          <div style="text-align:center; background:var(--surface); border-radius:10px; padding:10px 6px">
+            <div style="font-weight:900; font-size:18px">${esc(b.sold)}</div>
+            <div class="small" style="color:var(--muted)">Prodáno</div>
           </div>
-          <div class="card pad" style="padding:10px">
-            <div class="small">Reference</div>
-            <div style="font-weight:900">${esc(b.reviews)}</div>
+          <div style="text-align:center; background:var(--surface); border-radius:10px; padding:10px 6px">
+            <div style="font-weight:900; font-size:18px">${esc(b.reviews)}</div>
+            <div class="small" style="color:var(--muted)">Reference</div>
           </div>
-          <div class="card pad" style="padding:10px">
-            <div class="small">Hodnocení</div>
-            <div style="font-weight:900">${esc(b.rating)}</div>
+          <div style="text-align:center; background:var(--surface); border-radius:10px; padding:10px 6px">
+            <div style="font-weight:900; font-size:18px; color:var(--primary)">${esc(b.rating)}</div>
+            <div class="small" style="color:var(--muted)">Hodnocení</div>
           </div>
         </div>
         <div style="margin-top:12px" class="small">
           <div><strong>Specializace:</strong> ${esc((b.specialization||[]).join(", "))}</div>
-          <div style="margin-top:6px"><strong>Kontakt:</strong> ${esc(b.phone)} • ${esc(b.email)}</div>
+          <div style="margin-top:6px">
+            <a href="tel:${esc(b.phone.replace(/\s/g,''))}" style="color:var(--text)">${esc(b.phone)}</a>
+            &nbsp;•&nbsp;
+            <a href="mailto:${esc(b.email)}" style="color:var(--primary)">${esc(b.email)}</a>
+          </div>
         </div>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn btn-ghost btn-sm" href="kontakt.html">Kontakt</a>
+        <div style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap">
+          <a class="btn btn-ghost btn-sm" href="mailto:${esc(b.email)}">Napsat email</a>
           <a class="btn btn-primary btn-sm" href="kontakt.html">Domluvit schůzku</a>
         </div>
       </article>
@@ -401,5 +405,24 @@
     if(page === "references") initReferences();
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  /* ── Lazy image blur-up ── */
+  function initLazyImages(){
+    if(!("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const img = e.target;
+          img.addEventListener("load",()=>img.classList.add("loaded"), {once:true});
+          if(img.complete) img.classList.add("loaded");
+          io.unobserve(img);
+        }
+      });
+    },{rootMargin:"200px"});
+    $$("img[loading='lazy']").forEach(img=>io.observe(img));
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    init();
+    initLazyImages();
+  });
 })();
