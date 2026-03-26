@@ -21,7 +21,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "MujMakler.cz",
+  "description": "Prémiová realitní kancelář zaměřená na prodej nemovitostí v Praze a Středočeském kraji.",
+  "url": "https://www.mujmakler.cz",
+  "telephone": "+420123456789",
+  "email": "info@mujmakler.cz",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Praha",
+    "addressCountry": "CZ"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Praha" },
+    { "@type": "AdministrativeArea", "name": "Středočeský kraj" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "reviewCount": "86"
+  },
+  "priceRange": "$$"
+}
+</script>
 </head>
 <body data-page="home">
 
@@ -171,10 +197,10 @@
   <div class="container">
     <h2 class="h2" style="text-align:center;max-width:600px;margin:0 auto 8px">Zvyšte hodnotu své nemovitosti.<br>Získejte profesionální odhad zdarma.</h2>
     <p class="p" style="text-align:center;margin:0 auto 32px;max-width:480px;font-size:16px">Zadejte svůj e-mail a naši analytici se vám ozvou s tržním oceněním do 24 hodin.</p>
-    <div class="email-row">
-      <input type="email" placeholder="Váš e-mail" aria-label="E-mailová adresa" required>
-      <a class="btn btn-primary" href="rychly-odhad.html">Získat odhad</a>
-    </div>
+    <form class="email-row" data-form="newsletter" novalidate>
+      <input type="email" name="email" placeholder="Váš e-mail" aria-label="E-mailová adresa" required>
+      <button class="btn btn-primary" type="submit">Získat odhad</button>
+    </form>
     <p class="note">Nezávazně a zcela zdarma</p>
   </div>
 </section>
@@ -230,7 +256,7 @@
             </div>
             <div class="form-field">
               <label for="c-phone">Telefon</label>
-              <input class="input" id="c-phone" name="phone" required placeholder="+420 xxx xxx xxx" inputmode="tel" autocomplete="tel">
+              <input class="input" id="c-phone" name="phone" type="tel" required placeholder="+420 xxx xxx xxx" inputmode="tel" autocomplete="tel">
             </div>
           </div>
           <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px">

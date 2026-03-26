@@ -91,10 +91,16 @@
     const burger = $("#burger");
     const panel = $("#mobilePanel");
     if(burger && panel){
+      const iconHamburger = '<path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      const iconClose     = '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      const burgerSvg = burger.querySelector("svg");
+
       const toggleFn = ()=>{
         const open = panel.classList.toggle("is-open");
         burger.setAttribute("aria-expanded", open ? "true" : "false");
+        burger.setAttribute("aria-label", open ? "Zavřít menu" : "Menu");
         panel.setAttribute("aria-hidden", open ? "false" : "true");
+        if(burgerSvg) burgerSvg.innerHTML = open ? iconClose : iconHamburger;
         try{ document.documentElement.classList.toggle('mm-menu-open', !!open); }catch(_){}
       };
       burger.addEventListener("click", toggleFn);
@@ -103,7 +109,9 @@
         a.addEventListener("click", ()=>{
           panel.classList.remove("is-open");
           burger.setAttribute("aria-expanded", "false");
+          burger.setAttribute("aria-label", "Menu");
           panel.setAttribute("aria-hidden", "true");
+          if(burgerSvg) burgerSvg.innerHTML = iconHamburger;
         });
       });
     }
@@ -117,6 +125,44 @@
         a.setAttribute("aria-current", "page");
       }
     });
+  }
+
+  /* ── Inline form validation ── */
+  function validateForm(form){
+    // Clear previous errors
+    form.querySelectorAll(".field-error").forEach(el=>el.remove());
+    form.querySelectorAll(".is-error").forEach(el=>el.classList.remove("is-error"));
+
+    let valid = true;
+    const controls = form.querySelectorAll("input[required], select[required], textarea[required]");
+    controls.forEach(control=>{
+      if(control.type === "submit" || control.type === "button") return;
+      const val = control.value.trim();
+      let error = "";
+
+      if(!val){
+        error = "Toto pole je povinné.";
+      } else if(control.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+        error = "Zadejte platný e-mail.";
+      } else if(control.type === "tel" && !/^[+\d\s\-()]{6,}$/.test(val)){
+        error = "Zadejte platné telefonní číslo.";
+      }
+
+      if(error){
+        valid = false;
+        control.classList.add("is-error");
+        const msg = document.createElement("div");
+        msg.className = "field-error";
+        msg.setAttribute("role", "alert");
+        msg.textContent = error;
+        control.parentNode.appendChild(msg);
+      }
+    });
+
+    // Focus first error field
+    const firstErr = form.querySelector(".is-error");
+    if(firstErr) firstErr.focus();
+    return valid;
   }
 
   function handleForms(){
@@ -148,12 +194,23 @@
         ...fields
       ].join("\n");
 
+      const inbox = (data.contact && data.contact.email) ? data.contact.email : "info@mujmakler.cz";
       return `mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
+
+    // Remove error state on input
+    document.addEventListener("input", (e)=>{
+      if(e.target.classList && e.target.classList.contains("is-error")){
+        e.target.classList.remove("is-error");
+        const err = e.target.parentNode.querySelector(".field-error");
+        if(err) err.remove();
+      }
+    }, true);
 
     $$("form[data-form]").forEach(form=>{
       form.addEventListener("submit", (e)=>{
         e.preventDefault();
+        if(!validateForm(form)) return;
         const kind = form.getAttribute("data-form");
         const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
         const originalBtnText = submitBtn ? submitBtn.textContent : "";
@@ -238,6 +295,7 @@
         <div class="small" style="margin-top:10px">— ${esc(t.name)}</div>
       </div>
     `).join("");
+    initReveal();
   }
 
   function initHome(){
