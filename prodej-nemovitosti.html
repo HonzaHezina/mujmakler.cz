@@ -93,19 +93,34 @@
       <div class="panel reveal reveal-delay-1">
         <h3 class="h3">Rychlá poptávka</h3>
         <p class="p">Napište základní info – ozveme se s dalším postupem.</p>
-        <form data-form="sell" style="margin-top:12px">
-          <input class="input" required placeholder="Jméno">
-          <input class="input" required placeholder="Telefon" style="margin-top:10px">
-          <input class="input" type="email" required placeholder="Email" style="margin-top:10px">
-          <select class="input" style="margin-top:10px">
-            <option>Byt</option>
-            <option>Dům</option>
-            <option>Pozemek</option>
-            <option>Komerční</option>
-          </select>
-          <textarea required placeholder="Lokalita + stručný popis (např. Praha 4, 2+kk, 58 m²)"></textarea>
-          <button class="btn btn-primary" type="submit" style="width:100%">Odeslat poptávku</button>
-          <div class="small" style="margin-top:8px">Formulář odešleme přímo na petr.novak@mujmakler.cz. Odpovíme do 24 hodin.</div>
+        <form data-form="sell" style="margin-top:12px" novalidate>
+          <div class="form-field">
+            <label for="s-name">Jméno</label>
+            <input class="input" id="s-name" name="name" required placeholder="Jan Novák" autocomplete="name">
+          </div>
+          <div class="form-field" style="margin-top:10px">
+            <label for="s-phone">Telefon</label>
+            <input class="input" id="s-phone" name="phone" type="tel" required placeholder="+420 xxx xxx xxx" inputmode="tel" autocomplete="tel">
+          </div>
+          <div class="form-field" style="margin-top:10px">
+            <label for="s-email">E-mail</label>
+            <input class="input" id="s-email" name="email" type="email" required placeholder="jan@example.cz" autocomplete="email">
+          </div>
+          <div class="form-field" style="margin-top:10px">
+            <label for="s-type">Typ nemovitosti</label>
+            <select class="input" id="s-type" name="property_type">
+              <option>Byt</option>
+              <option>Dům</option>
+              <option>Pozemek</option>
+              <option>Komerční</option>
+            </select>
+          </div>
+          <div class="form-field" style="margin-top:10px">
+            <label for="s-note">Popis</label>
+            <textarea class="input" id="s-note" name="note" required placeholder="Lokalita + stručný popis (např. Praha 4, 2+kk, 58 m²)"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%; margin-top:12px">Odeslat poptávku</button>
+          <div class="small" style="margin-top:8px">Odesláním souhlasíte se <a href="gdpr.html" style="color:var(--primary)">zpracováním osobních údajů</a>. Odpovíme do 24 hodin.</div>
         </form>
       </div>
     </div>
