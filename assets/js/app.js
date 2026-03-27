@@ -24,6 +24,21 @@
   function initReveal(){
     const els = $$(".reveal:not(.visible)");
     if(!els.length) return;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+
+    // Synchronní fallback: prvky, které jsou již ve viewportu, označíme hned
+    // (prevents invisible content when IO fires late on mobile)
+    const toObserve = els.filter(el=>{
+      const r = el.getBoundingClientRect();
+      if(r.top < vh && r.bottom > 0){ el.classList.add("visible"); return false; }
+      return true;
+    });
+
+    if(!toObserve.length) return;
+
+    // threshold:0 + rootMargin: pre-fire 80px před vstupem do viewportu
+    // Opravuje iOS Safari + kinetický scroll (element vstoupí/opustí viewport
+    // dříve, než stačí callback při threshold .12)
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -31,8 +46,9 @@
           io.unobserve(e.target);
         }
       });
-    },{threshold:.12});
-    els.forEach(el=>io.observe(el));
+    },{threshold:0, rootMargin:"0px 0px 80px 0px"});
+
+    toObserve.forEach(el=>io.observe(el));
   }
 
   /* ── Animovaný čítač ── */
