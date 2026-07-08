@@ -1,88 +1,93 @@
 window.MUJMAKLER_DATA = {
   "brand": {
     "name": "MujMakler.cz",
-    "tagline": "Prodáváme nemovitosti v Praze a Středočeském kraji rychle, bezpečně a za maximum."
+    "tagline": "Realitní kancelář, která spojuje 28 let zkušeností s moderním přístupem k prodeji."
   },
   "contact": {
-    "phone": "+420 123 456 789",
-    "email": "petr.novak@mujmakler.cz",
-    "address": "Praha, Česká republika"
+    "phone": "+420 608 127 130",
+    "email": "info@mujmakler.cz",
+    "address": "Kancelář: U Křížku 588, 261 01 Příbram VI | Sídlo: Na Neklance 1958, 150 00 Praha 5"
   },
   "trust": {
-    "company": "MujMakler.cz s.r.o.",
+    "company": "123Nemo s.r.o.",
     "ico": "01234567",
-    "or": "Zapsáno v OR: Městský soud v Praze, oddíl C, vložka 123456 (ukázka).",
-    "insurance": "Pojištění odpovědnosti: Kooperativa (ukázka).",
-    "aml": "AML informace: dle zákona č. 253/2008 Sb. (ukázka)."
+    "or": "Zapsáno v OR: Městský soud v Praze (123Nemo s.r.o. / MujMakler.cz je obchodní značka společnosti 123Nemo s.r.o.).",
+    "insurance": "Pojištění odpovědnosti: Kooperativa.",
+    "aml": "AML informace: dle zákona č. 253/2008 Sb."
   },
   "brokers": [
     {
       "id": "b1",
-      "name": "Alina Luzarova",
+      "name": "Alina Luzarová",
       "role": "Rezidenční prodej • Byty & domy",
-      "region": "Praha 7",
+      "region": "Příbramsko & Praha-západ",
       "areas": [
-        "Praha 7",
-        "Praha 8",
-        "Praha",
-        "Středočeský kraj"
-      ],
-      "specialization": [
-        "Prodej bytů",
-        "Vyjednávání",
-        "Investiční nemovitosti"
-      ],
-      "sold": 124,
-      "reviews": 86,
-      "rating": 4.9,
-      "email": "alina.luzarova@mujmakler.cz",
-      "phone": "+420 725 456 789",
-      "avatar": "assets/img/broker-1.svg"
-    },
-    {
-      "id": "b2",
-      "name": "Michaela Gruberova",
-      "role": "Luxusní nemovitosti • VIP servis",
-      "region": "Praha 1",
-      "areas": [
-        "Praha 1",
-        "Praha 2",
+        "Příbramsko",
+        "Praha-západ",
         "Praha"
       ],
       "specialization": [
-        "Luxusní prodej",
-        "Home staging",
-        "Marketing"
+        "Byty",
+        "Domy",
+        "Chaty",
+        "Pozemky"
       ],
-      "sold": 42,
+      "sold": 120,
+      "reviews": 86,
+      "rating": 4.9,
+      "email": "alina.luzarova@mujmakler.cz",
+      "phone": "+420 774 324 154",
+      "avatar": "assets/img/broker-alina.png"
+    },
+    {
+      "id": "b2",
+      "name": "Michaela Farkaš",
+      "role": "Rezidenční prodej • Byty & domy",
+      "region": "Příbram & Praha-západ",
+      "areas": [
+        "Příbram",
+        "Praha-západ",
+        "Praha"
+      ],
+      "specialization": [
+        "Byty",
+        "Domy",
+        "Chaty",
+        "Pozemky"
+      ],
+      "sold": 250,
       "reviews": 105,
       "rating": 5.0,
-      "email": "misa@mujmakler.cz",
-      "phone": "+420 776 773 773",
-      "avatar": "assets/img/broker-2.svg"
+      "email": "michaela.farkas@mujmakler.cz",
+      "phone": "+420 776 358 482",
+      "avatar": "assets/img/broker-michaela.png"
     },
     {
       "id": "b3",
-      "name": "Petr Novak",
-      "role": "Komerční & investice",
-      "region": "Praha 4",
+      "name": "Petr Novák",
+      "role": "Komerce & složité případy",
+      "region": "Praha & Příbram",
       "areas": [
-        "Praha 4",
-        "Praha 5",
-        "Praha",
-        "Říčany"
+        "Praha Braník",
+        "Smíchov",
+        "Příbram",
+        "Dobříš",
+        "Praha-západ"
       ],
       "specialization": [
-        "Komerční reality",
-        "Investice",
-        "Právní prověrky"
+        "Komerce",
+        "Byty",
+        "Domy",
+        "Chaty",
+        "Pozemky",
+        "Nemovitosti s právními vadami"
       ],
-      "sold": 95,
-      "reviews": 64,
-      "rating": 4.8,
+      "sold": 2000,
+      "reviews": 164,
+      "rating": 5.0,
       "email": "petr.novak@mujmakler.cz",
-      "phone": "+420 555 666 777",
-      "avatar": "assets/img/broker-3.svg"
+      "phone": "+420 608 127 130",
+      "avatar": "assets/img/broker-petr.png"
     }
   ],
   "properties": [
