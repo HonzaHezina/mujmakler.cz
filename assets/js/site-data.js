@@ -37,7 +37,7 @@ window.MUJMAKLER_DATA = {
       "rating": 4.9,
       "email": "alina.luzarova@mujmakler.cz",
       "phone": "+420 774 324 154",
-      "avatar": "assets/img/broker-alina.png"
+      "avatar": "assets/img/broker-michaela.png"
     },
     {
       "id": "b2",
@@ -60,7 +60,7 @@ window.MUJMAKLER_DATA = {
       "rating": 5.0,
       "email": "michaela.farkas@mujmakler.cz",
       "phone": "+420 776 358 482",
-      "avatar": "assets/img/broker-michaela.png"
+      "avatar": "assets/img/broker-alina.png"
     },
     {
       "id": "b3",
